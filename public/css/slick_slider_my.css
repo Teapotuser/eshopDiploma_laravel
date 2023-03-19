@@ -1,0 +1,292 @@
+/*Wrapper со слайдером и его стрелками*/
+.product-slider-wrapper, .product-slider-nav-wrapper {
+    position: relative;
+}
+
+.product-carousel{
+    width: 80%;
+    height: 460px;
+    margin: 0 auto;
+}
+
+.slider-wrap{
+    width: 100%;
+    height: 460px;
+    margin: 0 auto;
+}
+
+.slider-img{
+    width: auto;
+    height: 450px;
+    margin: 0 auto;
+}
+
+.slider-nav{
+    width: 250px;
+    margin: 0 auto;
+}
+
+.slider-wrap-nav{
+    width: 60px; 
+    height: 60px;
+    background-color: #fff;
+    border: 3px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 7px;
+    padding: 3px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.slider-wrap-nav.slick-current.slick-active {
+    width: 60px; 
+    height: 60px;
+    background-color: #fff;
+    border: 3px solid #e20049;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 7px;
+    padding: 3px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+
+.slider-img1{
+    /* width: 80%;  */
+    height: 100%;
+    margin: 1px auto;
+    /* padding: 3px; */
+}
+
+/*не помню зачем*/
+.slick-prev, .slick-next{
+    /* z-index: 2; */
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 32px;
+    color: #e20049;    
+    text-shadow: 2px 2px 2px rgba (0, 255, 0, .5);
+}
+
+.slick-prev{
+    left: -32px;
+}
+
+.slick-next{
+    right: -32px;
+}
+
+/*Кастомизированные стрелки*/
+.slider-button-left {
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-left-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-button-left:hover {
+    background-image: url("../images/arrow-left-in-circle-hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.slider-button-right{
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-right-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-button-right:hover {
+    background-image: url("../images/arrow-right-in-circle-hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.slider-button-left.slick-arrow.slick-disabled, .slider-button-right.slick-arrow.slick-disabled {
+    /* display: none !important; */
+    opacity: .25;
+    /* cursor: none; */
+    cursor: pointer;
+}
+
+.slider-button-left.slick-arrow.slick-disabled:hover {
+    /* display: none !important; */
+    opacity: .25;
+    /* cursor: none; */
+
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-left-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 40%;
+    left: 0%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-button-right.slick-arrow.slick-disabled:hover {
+    opacity: .25;
+    /* cursor: none; */
+
+    width: 50px;
+    height: 50px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-right-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 40%;
+    right: 0%;
+    transition: background-color 200ms ease-out;
+}
+
+/*Кастомизированные стрелки slider-nav карусели*/
+.slider-nav-button-left {
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-left-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-nav-button-left:hover {
+    background-image: url("../images/arrow-left-in-circle-hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.slider-nav-button-right{
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    /* background-color: hsla(4, 0%, 0%, 1); */
+    background-image: url("../images/arrow-right-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 28%;
+    right: 15%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-nav-button-right:hover {
+    background-image: url("../images/arrow-right-in-circle-hover.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* .slider-nav-button-left.slick-arrow.slick-disabled, .slider-nav-button-right.slick-arrow.slick-disabled {
+    opacity: .25;
+    cursor: none;
+}
+
+.slider-nav-button-left.slick-arrow.slick-disabled:hover {
+    opacity: .25;
+    cursor: pointer;
+
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    background-image: url("../images/arrow-left-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0;
+    position: absolute;
+    top: 28%;
+    left: 15%;
+    transition: background-color 200ms ease-out;
+}
+
+.slider-nav-button-right.slick-arrow.slick-disabled:hover {
+    opacity: .25;
+    cursor: pointer;
+
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    background-image: url("../images/arrow-right-in-circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0;
+    position: absolute;
+    top: 28%;
+    right: 15%;
+    transition: background-color 200ms ease-out;
+} */
+

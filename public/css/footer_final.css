@@ -1,0 +1,406 @@
+.footer-top{
+    width: 100%;
+    height: 131px;
+    background: url("../images/NICI/footer1.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.footer-center{
+    width: 100%;
+    height: 160px;
+    background-color: #00b5c3;
+    border: 1px solid #e20049;
+}
+
+.footer-center-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px auto;
+}
+
+.footer-center-img{
+    background-image: url("../images/icn-bear.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 160px; 
+    width: 160px;
+}
+
+.subsribe{
+    display: block;
+    width: 70%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.subsribe-header{
+    font-family: "Bellota";
+    color: #fff;
+}
+
+.subsribe-header span{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 0rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.subsribe-header p{
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* margin-bottom: 15px; */
+}
+
+.subscribe-form-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subsribe-form{
+    display: flex;
+    justify-content: center;
+    /* height: 52px; */
+    /* РОМАН: для адаптива */
+    width: 500px; /* 300px; */
+    min-width: 50%;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.subsribe-email{   
+    height: 52px;
+    /* РОМАН: для адаптива */
+    width: 100%;
+    border: 6px solid #91d1d8;
+    border-radius: 50px;
+    color: #333;
+    padding-left: 15px;
+}
+
+.subsribe-email:focus-visible{
+    outline: none;
+    /* border: 6px solid #91d1d8; */
+}
+
+.subsribe-submit{
+    background-color: #e20049;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    height: 40px;
+    /* РОМАН: для адаптива */
+    width: 33%;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.subsribe-submit:hover{
+    background-color: #9b9b9b;
+}
+
+
+/* Нижний footer с меню */
+.footer-menu{
+    color: #fff;
+    background-color: #50bcca;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    margin-top: -1px;
+    margin-bottom: 0;
+}
+
+.footer-menu-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.footer-menu-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap:nowrap;
+    width: 50%;
+}
+
+.footer-menu-column{
+    display: block;
+    /* width: 33%; */
+}
+
+/*Аккордеон footer-a*/
+.f-list-box {
+    width: 100%;
+}
+
+.f-title-box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 20%; */
+    height: 30px;
+    background-color: #50bcca;
+    color: #fff !important;
+    padding: 10px 20px;
+    margin-bottom: 3px;
+   /*  border-bottom: #fff 1px solid;
+    cursor: pointer; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+}
+
+.f-title-box .button-plus-minus {
+    width: 16px;
+    height: 17px;
+    background-image: url(../images/arrow-up.svg); /*button-minus.svg*/
+    background-size: cover;  
+    background-repeat: no-repeat;
+}
+
+/* На широком экране компьютера */
+@media(min-width: 767px){
+    .f-title-box .button-plus-minus {
+        display: none;
+        cursor: none;
+    }
+}
+
+.f-title-box p {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #fff;    
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 100;
+    margin-bottom: 12px;
+}
+
+.f-title-box.open .button-plus-minus{
+    background-image: url(../images/arrow-down.svg);
+}
+
+.f-list-link {
+    /* background-color: #50bcca; */
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.f-list-link.open{
+    height: auto;
+    overflow: auto;
+    padding: 10px 20px;
+    /* width: 20%; */
+}
+
+/* .footer-menu-item */
+.f-list-link li {
+    margin-bottom: 14px;
+    list-style: none;  
+    
+    display: block;
+    color: #fff;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.f-list-link li:last-of-type {
+    margin-bottom: 0;
+}
+
+.f-list-link a, .f-list-link label {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    /* width: 20%; */
+    text-decoration: none;    
+}
+
+.f-list-link a {
+    display: block;
+}
+
+/* .footer-menu-column>b{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform:  uppercase;
+    margin-bottom: 12px;
+} */
+
+/* .footer-menu-column>ul{
+    list-style-type: none;
+    margin-left: 0px;
+    margin-inline-start: 0rem; */
+    /* Свойство убравшее отступ в ul списке*/
+   /*  padding-inline-start: 0;
+}
+
+.footer-menu-item{
+    display: block;
+    color: #fff;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.footer-menu-item a{
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+ */
+.footer-menu-right{
+    display: block;
+    
+}
+.footer-menu-right p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    /* margin-top: 0px; */
+    /* margin-bottom: 5px; */
+    position: relative;
+    margin-left: 22px;
+    
+} 
+
+/* .footer-menu-right li{
+    position: relative;
+} */
+
+.footer-menu-right p.footer-firm{
+    font-size: 13px;
+    font-weight: 600;
+    text-transform:  uppercase;
+    margin-bottom: 12px;
+    /*Вадим*/
+    pointer-events: none;
+}
+
+.footer-menu-right p.footer-location::before{
+    content: '';
+    background-image: url(../images/location-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -25px; 
+    /* display: inline; */
+    height: 15px;
+    width: 13px;
+    max-height: 15px;
+    max-width: 13px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-email::before{
+    content: '';
+    background-image: url(../images/mail-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -24px; 
+    /* display: inline; */
+    height: 12px;
+    width: 17px;
+    max-height: 12px;
+    max-width: 17px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-phone::before{
+    content: '';
+    background-image: url(../images/phone-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -20px; 
+    /* display: inline; */
+    height: 15px;
+    width: 10px;
+    max-height: 15px;
+    max-width: 10px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-work-hours::before{
+    content: '';
+    background-image: url(../images/mono-tool-timer.svg);
+    position: absolute;
+    background-size: cover;
+    left: -22px; 
+    /* display: inline; */
+    height: 15px;
+    width: 15px;
+    max-height: 15px;
+    max-width: 15px;
+    margin-right: 4px;
+}
+
+/* На широком экране компьютера */
+@media(min-width: 767px){
+
+}
+
+@media(max-width: 767px) {
+    .f-list-box{
+        border-bottom: 1px rgba(255, 255, 255, 0.5) solid;
+    }
+
+    .f-title-box .button-plus-minus {
+        width: 16px;
+        height: 17px;
+    }
+    .f-title-box {
+        width: 100%;        
+    }
+    .f-list-box.open{
+        width: 100%;
+    }
+
+    .f-list-link.open{
+        width: 100%;
+    }
+
+    /*Вадим*/
+   /*  .footer-menu-left .f-list-link.open {
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .footer-menu-left .f-list-link {
+        height: auto;
+        overflow: auto;
+        padding: 10px 20px;
+    } */
+    /*end of Вадим*/
+
+    .footer-menu-container{
+        display: block;
+        width: 100%;
+    }
+
+    .footer-menu-left{
+        display: block;
+        width: 100%;
+    }
+
+    .footer-menu-right .f-title-box p:first-child{
+        margin-left: 0px;
+    }
+
+}

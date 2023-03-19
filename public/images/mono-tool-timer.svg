@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    id="svg1"
+    viewBox="0 0 60 60"
+    sodipodi:version="0.32"
+    _SVGFile__filename="oldscale/actions/todo.svg"
+    version="1.0"
+    inkscape:version="0.41"
+    y="0"
+    x="0"
+    sodipodi:docname="msn_away.svg"
+    sodipodi:docbase="/home/danny"
+  >
+ 
+  <g
+      id="g2091"
+      transform="matrix(1.8141 0 0 1.8141 -24.352 -32.241)"
+    >
+    <path
+        id="path2093"
+        style="stroke-linejoin:round;stroke:#ffffff;stroke-linecap:round;stroke-width:5.5124;fill:none"
+        d="m43.399 34.31c0 7.418-6.02 13.438-13.438 13.438s-13.438-6.02-13.438-13.438 6.02-13.438 13.438-13.438 13.438 6.02 13.438 13.438z"
+    />
+    <path
+        id="path2095"
+        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#ffffff;stroke-linecap:round;stroke-width:2.7562;fill:#50bcca"
+        d="m43.399 34.31c0 7.418-6.02 13.438-13.438 13.438s-13.438-6.02-13.438-13.438 6.02-13.438 13.438-13.438 13.438 6.02 13.438 13.438z"
+    />
+    <path
+        id="path2097"
+        sodipodi:nodetypes="cc"
+        style="stroke-linejoin:round;stroke:#ffffff;stroke-linecap:round;stroke-width:2.7562;fill:none"
+        d="m29.961 34.169v-8.723"
+    />
+    <path
+        id="path2099"
+        style="stroke-linejoin:round;stroke:#ffffff;stroke-linecap:round;stroke-width:2.7562;fill:none"
+        d="m29.986 34.464l5.869 3.389"
+    />
+    <path
+        id="path2101"
+        style="stroke-linejoin:round;fill-rule:evenodd;stroke:#ffffff;stroke-linecap:round;stroke-width:1.7226;fill:#ffffff"
+        d="m31.178 34.31c0 0.672-0.545 1.217-1.217 1.217s-1.217-0.545-1.217-1.217 0.545-1.218 1.217-1.218 1.217 0.546 1.217 1.218z"
+    />
+  </g
+  >
+ 
+  >
+</svg
+>

@@ -1,0 +1,71 @@
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 24px;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.IconButton {
+  width: 56px;
+  height: 56px;
+  appearance: none;
+  border-radius: 50%;
+  border: 0;
+  /* background-color: hsla(4, 0%, 0%, 1); */
+  background-image: url("../images/arrow-left-in-circle.svg");
+  background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  transition: background-color 200ms ease-out;
+}
+
+/* .IconButton {
+  width: 56px;
+  height: 56px;
+  appearance: none;
+  border-radius: 50%;
+  border: 0;
+  background-color: #000;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+} */
+
+.IconButton:hover {
+	 background-image: url("../images/arrow-left-in-circle-hover.svg");
+  background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+  background-color: hsla(4, 0%, 0%, 0.7);
+}
+
+.IconButton::before {
+  /* Positioning related code */
+  /* content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  background: #fff;
+  pointer-events: none; */
+
+  /* this allows optical centering if required */
+  /* position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); */
+
+  /* Masking code */
+  /* mask-image: url("https://cdn.glitch.com/a10b6199-a788-4cef-8bd8-21f95dbcba93%2Fdownload-cloud.svg?v=1571346192759");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 100%; */
+}
+.IconButton:nth-child(2)::before {
+  background-image: linear-gradient(to bottom, yellow, lime);
+}

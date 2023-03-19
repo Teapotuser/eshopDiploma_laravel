@@ -1,0 +1,285 @@
+.right-side-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.product-slider-title-container {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    /* padding: 10px 20px; */
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.product-slider {
+    border: 1px solid blueviolet;
+    width: 60%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-title {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    padding: 10px auto;
+    flex: 1;
+    width: 40%;
+    max-width: 480px;
+    
+}
+
+.left-side-product{
+    border: 1px solid blueviolet;
+    padding: 5px;
+    width: 60%;
+    max-width: 720px;
+    /* width: 700px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+/* .product-carousel{
+    width: 500px;
+    height: auto;
+} */
+
+.slider-nav .slider-wrap .slider-img1{
+    width: 100px;
+    height: 120px;
+}
+
+/* .slider-img {
+    width: 500px;
+    height: 500px;
+} */
+
+/*Правая часть с названием и ценой товара*/
+.product-lighter-bg {
+    width: 100%;
+    background-color: #f8f4ee; /* #f2e9de; */
+    padding: 15px 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product-name {
+    text-align: left;
+    align-content: center;
+    color: #484848;
+    font-family: Bellota; /* Bellota-Bold; */
+    font-size: 28px;
+    font-weight: bold;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-bottom: 35px;
+}
+
+.product-article, .product-size {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.product-article span:first-child, .product-size span:first-child {
+    font-weight: bold;
+}
+
+.product-size {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+.product-size div:first-child {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.product-size .product-size-rect {
+    height: 30px;
+    width: 80px;
+    background-color: #00b5c3;
+    color: #fff;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.product-price {
+    display: block;
+    padding: 15px 0px;
+}
+
+.product-initial-price {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 140%;
+    color: #333;
+    text-decoration: line-through;
+    margin-bottom: 10px;
+}
+
+.product-final-price {
+    font-size: 32px;
+    color: #e20049;
+    line-height: 32px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+.product-darker-bg {
+    width: 100%;
+    background-color: rgb(243, 233, 222);
+    padding: 25px 20px;
+    
+}
+
+.add-to-basket-form-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/*Нижнее описание продукта*/
+.product-description-wrapper {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.dash-top, .dash-bottom{
+    width: 100%;
+    height: 25px;
+    /* background: url("../images/NICI/footer1.png"); */
+   
+}
+
+.dash-top {
+    background: url("../images/NICI/divider-white-lighterbeige.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.dash-bottom {
+    background: url("../images/NICI/divider-lighterbeige-white.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.product-description-wrapper .product-info {
+    width: 100%;
+    /* height: 160px; */
+    background-color: #f8f4ee;
+    padding: 0px 0px;
+    /* border: 1px solid #e20049; */
+}
+
+.product-description-common {
+    padding: 10px 20px;
+}
+
+.product-description-common p {
+    padding: 0px 0px;
+    margin: 0px auto;
+    text-align: justify;
+}
+
+/*Product information and Product details table*/
+.product-details-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 10px 20px;
+}
+
+.product-details-wrapper .product-details {
+    display: block;
+    width: 40%;
+    min-width: 350px;
+}
+
+.product-details-wrapper .product-details-header {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #484848;    
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 100;
+    margin-bottom: 12px;
+}
+
+.product-details-wrapper .product-details p {
+    padding: 0px 0px;
+    margin: 0px auto;
+    text-align: justify;
+}
+
+.product-details-wrapper .product-details-table {
+    display: block;
+    width: 60%;
+}
+
+/*Адаптив*/
+@media(max-width: 1070px){
+
+    .product-slider-title-container {
+        border: 1px solid blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        /* padding: 10px 20px; */
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .product-slider {
+        border: 1px solid blueviolet;
+        width: 100%;
+        /* max-width: 600px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+        
+    .product-title {
+        border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+        padding: 10px auto;
+        /* flex: 1; */
+        width: 100%;
+        max-width: 1000px;
+        
+    }
+    .product-details-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px 20px;
+    }
+
+    .product-details-wrapper .product-details {
+        display: block;
+        width: 100%;
+        min-width: 350px;
+    }
+
+}    
+
+

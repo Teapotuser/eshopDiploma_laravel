@@ -1,0 +1,295 @@
+@media (min-width: 300px) and (max-width: 1000px) {
+    .header-top {
+        display: none;
+    }
+
+    .header-center .logo img {
+        width: 50%;
+    }
+
+    .animals-image img {
+        display: none;
+    }
+
+    .profile-basket .burger-menu {
+        display: block;
+     }
+
+     .header-menu-search {
+        width: 97%;
+        margin: 0 auto;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .subscribe-form-container {
+        margin-bottom: 50px;
+    }
+
+    .footer-center-container {
+        height: 165px;
+    }
+
+    .subscribe-submit {
+        font-size: 7px;
+    }
+}
+
+/* @media (min-width: 300px) and (max-width: 1000px) {
+    .header-top {
+        display: none;
+    }
+} */
+
+/* @media (min-width: 300px) and (max-width: 1000px) {
+    .header-center .logo img {
+        width: 40%;
+    }
+
+    .profile-basket .burger-menu {
+        display: block;
+     }
+} */
+
+
+
+/* nav.main_nav {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+} */
+
+/* @media (min-width: 300px) and (max-width: 1000px) {
+    nav.main_nav li {
+         display: none; 
+    }
+    
+    
+} */
+/* @media (min-width: 300px) and (max-width: 1000px) {
+    .header-menu-search {
+        width: 97%;
+        margin: 0 auto;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .subscribe-form-container {
+        margin-bottom: 50px;
+    }
+
+    .footer-center-container {
+        height: 165px;
+    }
+
+    .subscribe-submit {
+        font-size: 7px;
+    }
+    
+    
+} */
+
+@media (min-width: 768px) and (max-width: 999px) {
+     .header-center {
+        height: 110px;
+        background-color: #fff;        
+    }
+
+    .header-center .logo img {
+        width: 60%;
+    }
+
+    .profile-basket {
+        padding-top: 20px;
+        height: 100%;
+    }
+
+    }
+
+@media (min-width: 300px) and (max-width: 768px) {
+.left-side{
+    display: none;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1066px) {
+    /* Вадим:  для адаптива slick slider-ов*/
+    .right-side {
+        width: 66%;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 501px) {
+ 
+    .img_block {
+        flex: 1 0 50%;
+        max-width: 100%;
+    }
+}
+@media (min-width: 502px) and (max-width: 1000px) {
+ 
+    .img_block {
+        flex: 1 0 35%;
+        max-width: 49%;
+    }
+}
+/* @media (min-width: 300px) and (max-width: 768px) {
+    .main_nav li {
+        width: 40%;
+
+    }
+
+    .main_nav::before, .main_nav::after {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        display: block;
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+        background-image: url(../images/hamburger-menu-icon.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+} */
+
+/*Адаптив footer-а подписка на рассылку*/
+@media (min-width: 1001px) and (max-width: 1030px) {
+    .subsribe-header span{
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 0rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .subsribe-header p{
+        font-size: 1rem;
+        font-weight: 600;
+        /* margin-bottom: 15px; */
+    }
+}
+
+@media (min-width: 806px) and (max-width: 1000px) {
+    .subsribe-header span{
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 0rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .subsribe-header p{
+        font-size: 1rem;
+        font-weight: 600;
+        /* margin-bottom: 15px; */
+    }
+
+    .subscribe-form-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subsribe-form{
+        display: flex;
+        justify-content: center;
+        /* height: 52px; */
+        /* РОМАН: для адаптива */
+        width: 450px;
+        min-width: 50%;
+        position: relative;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+@media (min-width: 523px) and (max-width: 805px) {
+    .subsribe-header span{
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 0rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .subsribe-header p{
+        font-size: 0.9rem;
+        font-weight: 600;
+        /* margin-bottom: 15px; */
+    }
+
+    .subscribe-form-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subsribe-form{
+        display: flex;
+        justify-content: center;
+        /* height: 52px; */
+        /* РОМАН: для адаптива */
+        width: 400px;
+        min-width: 50%;
+        position: relative;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 522px) {
+    .subsribe-header span{
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 0rem;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .subsribe-header p{
+        font-size: 0.8rem;
+        font-weight: 600;
+        /* margin-bottom: 15px; */
+    }
+
+    .subscribe-form-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subsribe-form{
+        display: flex;
+        justify-content: center;
+        /* height: 52px; */
+        /* РОМАН: для адаптива */
+        width: 300px;
+        min-width: 50%;
+        position: relative;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .subsribe-submit{
+        background-color: #e20049;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-weight: 500;
+        height: 40px;
+        /* РОМАН: для адаптива */
+        width: 33%;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        z-index: 2;
+        cursor: pointer;
+        font-size: 14px;
+    }
+}

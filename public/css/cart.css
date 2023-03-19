@@ -1,0 +1,286 @@
+.cart-table-container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(248, 244, 238);
+    /* padding-bottom: 20px; */
+    padding: 25px 10px;
+}
+
+.main-cart-header {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #e20049;
+}
+
+.main-cart-header-hide {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: #e20049;
+    display: none;
+}
+
+
+.main-cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+   /*  padding-bottom: 10px;
+    margin-top: 10px; */
+    height: 100px;
+}
+
+.main-cart-not-column {
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid black;
+    margin-right: 1.5em; 
+    padding-bottom: 10px;
+    margin-top: 10px; */
+
+}
+
+.main-cart-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.main-cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.main-cart-row:last-child .main-cart-column {
+    border: none;
+}
+
+
+
+/*6 столбцов таблицы с товарами в корзине*/
+.main-cart-itemimage-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.main-cart-priceqtysum-container {
+    display: flex;
+    flex-direction: row;
+    width: 45%;
+}
+
+.main-cart-image {
+    width: 20%;
+}
+
+.main-cart-img {
+    width: 60px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.main-cart-item {
+    width: 80%; 
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+/*Название товара*/
+.main-cart-title {
+    font-family: 'Bellota';
+    font-weight: bold;
+}
+
+.main-cart-hide {
+    display: none;
+}
+.main-cart-price {
+    width: 28%;
+    display: flex;
+}
+
+.main-cart-quantity {
+    width: 45%;
+    display: flex;
+}
+
+.main-cart-sum {
+    width: 27%;
+    display: flex;
+}
+
+.main-cart-remove {
+    /* width: 10%; */
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+/*Итого*/
+.main-cart-total{
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 25px; */
+}
+
+.main-cart-total-title{
+    margin-right: 20px;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #e20049;
+}
+
+.main-cart-total-price{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    /* letter-spacing: 2px; */
+    color: #e20049;
+}
+
+/*Buttons*/
+.main-cart-buttons-container {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.main-cart-clear-cart {
+    cursor: pointer;
+    color: #e20049;
+    background-color: #fff;
+    border: 1px solid #e20049;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    height: 34px;
+    line-height: 32px;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    align-content: center;
+}
+
+.main-cart-back {
+    cursor: pointer;
+    color: white;
+    background-color: #00b5c3;
+    border: none;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    height: 34px;
+    line-height: 32px;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    align-content: center;
+}
+
+.main-cart-button-order {
+    cursor: pointer;
+    color: white;
+    background-color: #e20049;
+    border: none;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    height: 34px;
+    line-height: 32px;
+    width: 250px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    align-content: center;
+}
+
+/*Адаптив*/
+@media(max-width: 1000px){
+
+    .main-cart-header {
+        display: none !important;
+    }
+
+    .main-cart-header-hide {
+       display: block;
+    }
+
+    .main-cart-row {
+        display: flex;
+        flex-direction: column;
+       /*  justify-content: flex-start;
+        flex-wrap: nowrap; */
+        position: relative;
+    }
+
+    .main-cart-itemimage-container {
+        display: flex;
+        flex-direction: row;
+        width: 95%;
+    }
+
+    .main-cart-image {
+        width: 15%;
+    }   
+    
+    .main-cart-item {
+        width: 85%; 
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: center;
+    }
+
+    .main-cart-priceqtysum-container {
+        display: flex;
+        flex-direction: row;
+        width: 95%;
+    }
+
+    .main-cart-hide {
+        display: block;
+        width: 18%;
+    }
+
+    .main-cart-price {
+        width: 23%;  
+        display: block;  
+    }
+    
+    .main-cart-quantity {
+        width: 44%;
+        display: block;
+    }
+    
+    .main-cart-sum {
+        width: 23%;
+        display: block;
+    }
+
+    .main-cart-buttons-container {
+        margin: 40px;
+        display: flex;
+        flex-direction: column;        
+    }
+
+    .main-cart-buttons-container button {
+        margin: 10px auto;
+    }
+
+}

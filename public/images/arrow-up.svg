@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 489 522"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg850"
+   sodipodi:docname="arrow-up.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   width="489"
+   height="522"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs854" /><sodipodi:namedview
+   id="namedview852"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:window-width="1366"
+   inkscape:window-height="705"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg850" />
+<metadata
+   id="metadata840"> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata>
+<g
+   id="g848"
+   transform="rotate(180,476.01,475.84454)"><g
+     transform="matrix(0.1,0,0,-0.1,0,511)"
+     id="g846" /></g>
+<g
+   id="svgg"
+   transform="matrix(-1.098657,-2.1562357,-2.1562357,1.098657,1223.998,674.3099)"
+   style="stroke-width:0.413223"><path
+     id="path0"
+     d="M 427.87755,229.148 C 435.55593,239.79825 436.85797,254.36076 431.16417,265.89113 428.99716,270.28074 339.09888,383.2748 327.98853,395.57429 315.32983,409.58809 299.05346,411.36061 283.93131,400.37373 270.9296,390.92743 269.87296,387.56028 269.25841,353.5941 268.77193,326.67878 268.45542,324.06569 264.89521,317.58419 L 262.60795,313.42184 239.4635,296.09962 C 217.1783,279.42023 216.22273,278.62585 213.7384,274.68371 202.48955,256.83624 210.65409,232.91214 230.47236,225.65381 237.21405,223.18497 396.96033,213.36256 405.43339,214.8957 413.27704,216.31518 423.14088,222.57935 427.87755,229.148 M 399.36397,240.12816 C 394.09213,240.00738 246.0944,249.32996 241.77411,250.05503 236.24515,250.98228 234.21645,253.08552 234.57934,257.51472 L 234.8151,260.39548 257.52248,277.4397 C 292.85619,303.96032 294.34431,306.82885 295.1171,349.92589 295.61164,377.54296 295.60212,377.4693 298.95388,379.90449 302.49899,382.48017 305.78133,381.80566 309.43621,377.7517 322.49574,363.26276 408.066,254.96335 408.56019,252.29774 409.6007,246.6855 404.73867,240.25197 399.36397,240.12816"
+     stroke="none"
+     fill="#fff"
+     fill-rule="evenodd"
+     sodipodi:nodetypes="cccsccccccccccccccscsc"
+     style="stroke-width:0.206612" /></g></svg>

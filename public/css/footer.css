@@ -1,0 +1,251 @@
+.footer-top{
+    width: 100%;
+    height: 131px;
+    background: url("../images/NICI/footer.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.footer-center{
+    width: 100%;
+    height: 160px;
+    background-color: #4bb3c0;
+    border: 1px solid #e20049;
+}
+
+.footer-center-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px auto;
+}
+
+.footer-center-img{
+    background-image: url("../images/icn-bear.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 160px; 
+    width: 160px;
+}
+
+.subsribe{
+    display: block;
+    width: 70%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.subsribe-header{
+    font-family: "Bellota";
+    color: #fff;
+}
+
+.subsribe-header span{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 0rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.subsribe-header p{
+    font-size: 1.1rem;
+    font-weight: 600;
+    /* margin-bottom: 15px; */
+}
+
+.subscribe-form-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subsribe-form{
+    display: flex;
+    justify-content: center;
+    /* height: 52px; */
+    /* РОМАН: для адаптива */
+    width: 300px;
+    min-width: 50%;
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.subsribe-email{   
+    height: 52px;
+    /* РОМАН: для адаптива */
+    width: 100%;
+    border: 6px solid #91d1d8;
+    border-radius: 50px;
+    color: #333;
+    padding-left: 15px;
+}
+
+.subsribe-email:focus-visible{
+    outline: none;
+    /* border: 6px solid #91d1d8; */
+}
+
+.subsribe-submit{
+    background-color: #e20049;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-weight: 500;
+    height: 40px;
+    /* РОМАН: для адаптива */
+    width: 33%;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.subsribe-submit:hover{
+    background-color: #9b9b9b;
+}
+
+
+/* Нижний footer с меню */
+.footer-menu{
+    color: #fff;
+    background-color: #50bcca;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    margin-top: -1px;
+    margin-bottom: 0;
+}
+
+.footer-menu-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.footer-menu-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.footer-menu-column{
+    display: block;
+    /* width: 33%; */
+}
+
+.footer-menu-column>b{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform:  uppercase;
+    margin-bottom: 12px;
+
+}
+
+.footer-menu-column>ul{
+    list-style-type: none;
+    margin-left: 0px;
+    margin-inline-start: 0rem;
+    /* Свойство убравшее отступ в ul списке*/
+    padding-inline-start: 0;
+}
+
+.footer-menu-item{
+    display: block;
+    color: #fff;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.footer-menu-item a{
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-menu-right{
+    display: block;
+    
+}
+.footer-menu-right p{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    position: relative;
+    margin-left: 10px;
+}
+
+.footer-menu-right p.footer-firm{
+    font-size: 13px;
+    font-weight: 600;
+    text-transform:  uppercase;
+    margin-bottom: 12px;
+}
+
+.footer-menu-right p.footer-location::before{
+    content: '';
+    background-image: url(../images/location-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -25px; 
+    /* display: inline; */
+    height: 15px;
+    width: 13px;
+    max-height: 15px;
+    max-width: 13px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-email::before{
+    content: '';
+    background-image: url(../images/mail-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -24px; 
+    /* display: inline; */
+    height: 12px;
+    width: 17px;
+    max-height: 12px;
+    max-width: 17px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-phone::before{
+    content: '';
+    background-image: url(../images/phone-icon.svg);
+    position: absolute;
+    background-size: cover;
+    left: -20px; 
+    /* display: inline; */
+    height: 15px;
+    width: 10px;
+    max-height: 15px;
+    max-width: 10px;
+    margin-right: 4px;
+}
+
+.footer-menu-right p.footer-work-hours::before{
+    content: '';
+    background-image: url(../images/mono-tool-timer.svg);
+    position: absolute;
+    background-size: cover;
+    left: -22px; 
+    /* display: inline; */
+    height: 15px;
+    width: 15px;
+    max-height: 15px;
+    max-width: 15px;
+    margin-right: 4px;
+}

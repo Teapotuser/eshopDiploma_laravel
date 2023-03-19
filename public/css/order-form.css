@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+ }
+/*  body {
+    background: #f69a73;
+ } */
+ .decor {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 30px;
+ } 
+
+ .form-inner {
+    background-color: #f8f4ee;
+    padding: 30px;
+   /*  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+ } 
+ .form-inner input[type="text"], .form-inner input[type="email"], .form-inner input[type="number"], .form-inner input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #fff;
+    color: #333;
+    line-height: 40px;
+    /* border-width: 0; */
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+ }
+
+ .form-inner input:active, .form-inner input:hover, .form-inner input:focus {
+    outline: 1px;
+    outline-color: #e20049;
+    border-width: 1px;
+    border-color: #e20049;
+    /* outline-offset: 0; */
+}
+
+.form-inner .form-inner-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.form-inner input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+}
+
+.form-inner label {
+    /* margin-left: 10px; */
+}
+
+ .form-inner input[type="submit"] {
+    margin-top: 30px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+ }
+ .form-inner textarea {
+    resize: none;
+ }
+ .form-inner h3 {
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #e20049;
+    text-align: center;
+ }
+
+/* radiobuttons */
+.form-inner ul {
+      /* Свойство убравшее отступ в ul списке*/
+      padding-inline-start: 0;
+}
+
+.form-inner li {
+    list-style: none;
+}
+label {
+    padding: 0 0 0 2rem;
+    position: relative;
+  }
+  
+  input[type=radio] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  input[type=radio] + label::before,
+  input[type=radio] + label::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  input[type=radio] + label::before {
+    left: 0.5rem;
+    top: 0.2rem;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 0.05rem solid black;
+    background: white;
+  }
+  
+  input[type=radio]:checked + label::after {
+    left: 0.7rem;
+    top: 0.4rem;
+    border: 0.25rem solid black;
+  }
+  
+  input[type=radio]:focus + label::before {
+    outline: 0.05rem dotted;
+  }
+
+  /* Логин и регистрация*/
+  .form-wrapper {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   /* gap: 30px; */
+  }
+
+  .login-form-decor {
+   position: relative;
+   max-width: 50%;
+   width: 50%;
+   /* margin: 50px auto 0; */
+   margin-left: 5%;
+   margin-right: 5%;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   background: white;
+   border-radius: 30px;
+}
+
+ .center-button {
+   margin: 20px auto;
+  } 
+
+  .center-button > div {
+   display: flex;
+   justify-content: center;
+} 
+
+  @media (min-width: 300px) and (max-width: 768px) {
+   .form-wrapper {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .login-form-decor {
+      max-width: 100%;
+      width: 90%;
+}
+}
+

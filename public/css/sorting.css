@@ -1,0 +1,82 @@
+ /* Сортировка панель*/
+ .sorting-line-divider {
+    background-image: url("../images/NICI/filter-bgd.png");
+    background-position: right;
+    background-repeat: repeat-x;
+    display: block;
+    height: 65px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    padding-top: 25px;
+  }
+
+  .sort-wrapper {
+    /* width: 40%; */
+    /* margin-top: 55px; */
+    margin-left: 25px;
+  }
+
+  .sort-form {
+	/* устанавливаем необходимую ширину формы в зависимости от дизайна
+	** форма без проблем растягивается */
+	width: 100%; /* 300px; */
+
+	/* кнопку отправки будем позиционировать абсолютно,
+	** поэтому необходимо это свойство */
+	/* position: relative; */
+    display: inline-flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    overflow: hidden;
+    /* background-color: #fff; */
+    /* закругляем углы */
+	/* border-radius: 8px; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.sort-form label {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.sort-form select {
+	/* отключаем бордюры у инпутов */
+	border: none;
+    border-radius: 8px;
+    color: #484848;
+    font-size: 14px;
+    font-style: italic;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 24px 0px 10px;
+
+	/* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+    outline: none;
+}
+
+.sort-form select option{
+    color: #484848;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.sort-form select option {
+    color: #484848;
+    font-size: 14px;
+    font-style: italic;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+    .sort-form label {
+        display: none;
+    }
+    }

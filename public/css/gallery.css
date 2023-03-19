@@ -1,0 +1,334 @@
+@font-face {
+    font-family: "Bellota";
+    src: url(../fonts/Bellota/Bellota-Regular.ttf) format("truetype"),
+    url(../fonts/Bellota/Bellota-Bold.ttf) format("truetype"),
+    url(../fonts/Bellota/Bellota-Italic.ttf) format("truetype");
+}
+
+
+.layout_four_column {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-block-start: 0px;
+    /* РОМАН: влияло на выравнивание gallery по ширине*/
+    gap: 25px 17px;
+    padding: 0 0px;
+    max-width: 1000px;
+  }
+  
+  .img_block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    flex: 1 0 25%;
+    min-width:  140px; /*150px;*/
+    max-width: 32%;
+    padding: 10px; 
+    /* padding-bottom: 40px;    */
+    background-color: #d1e4f3;
+    position: relative;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+  }
+
+  /*Вадим*/
+  .img_block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 52%;
+    background-color: transparent;
+    z-index: -1;
+  }
+
+  /* .img_block::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: red;
+  } */
+
+  /*Вадим: заменили для линии после 1-2-3 карточек товара*/
+  .layout_four_column > .img_block {
+    position: relative;
+  }
+
+  .img_block:nth-child(3n):after {
+    content: "";
+    position: absolute;
+    left: -206%;
+    bottom: -12px; /* -8px; */
+    height: 1px;
+    width: 300%;
+    background-color: #e1e1e1;
+  }
+
+@media(max-width: 1000px) {
+  .img_block:nth-child(3n):after {
+    opacity: 0;
+  }
+  .img_block:nth-child(2n):after {
+    opacity: 1;
+    content: "";
+    position: absolute;
+    left: -104%;
+    bottom: -8px;
+    height: 1px;
+    width: 200%;
+    background-color: #e1e1e1; 
+  }
+}
+
+@media(max-width: 503px) {
+  .img_block:nth-child(n):after {
+    opacity: 1;
+    content: "";
+    position: absolute;
+    left: 0%;
+    bottom: -8px;
+    height: 1px;
+    width: 100%;
+    background-color: #e1e1e1;
+  }
+}
+
+
+  .img_block a {
+    /* display:inline; */
+
+    /* margin: 5px auto; */
+    /* margin-bottom: 5px; */
+    display: block;
+    text-align: center;
+    align-content: center;
+    color: #484848;
+    font-family: Bellota;
+    font-size: 13px;
+  }
+
+  .img_block a:first-child{
+    flex: 1;
+  }
+  
+  .img-product{
+    max-width: 128px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+  }
+
+  /* .img {
+    width: 100%;
+    height: 100%;
+  } */
+
+  .name-product{
+    margin-bottom: 2px;
+    padding: 0 10px;
+  }
+
+  .size-product{
+    margin-top: 0px;
+  }
+
+  .price-product{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .initial-price-product{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 140%;
+    color: #484848;
+    text-decoration: line-through;
+    margin-right: 10px;
+  }
+
+  .final-price-product {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 140%;
+    color: #e20049;
+  }
+  .gallery-form {
+    width: 100%;
+    text-align: center;
+  }
+
+  .img_block__button {
+    cursor: pointer;
+    color: white;
+    background-color: #e20049;
+    border: none;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    height: 34px;
+    line-height: 32px;
+    width: 70%;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    align-content: center;
+  }
+
+  .img_block__button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #9b9b9b;
+    border: none;
+    align-self: center;
+    text-align: center;
+    border-radius: 25px;
+    height: 34px;
+    line-height: 32px;
+    width: 70%;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 2px;
+    align-content: center;
+    transition: all 0.2s linear;
+  }
+  
+/*Товар уже в корзине*/
+  .img_block__button.disabled {
+    background-color: #ffcc00;
+    color: #484848;
+  }
+
+  /* Акция, скидка */
+  .promotion-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+  }
+
+  .promotion-discount, .promotion-new {   
+    position: relative; 
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+  }
+
+  .promotion-discount .svg-promotion, .promotion-new .svg-promotion {
+    width: 100%;
+    height: 100%;
+  }
+
+  .promotion-discount p{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 60px;
+    height: auto;
+    z-index: 3;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transform: rotateZ(-42deg);
+  }
+
+  .promotion-new p{
+    position: absolute;
+    top: 0px;
+    left: 11px;
+    width: 60px;
+    height: auto;
+    z-index: 3;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transform: rotateZ(-42deg);
+  }
+
+  .promotion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .promotion .svg-promotion{
+    width: 100%;
+    height: 100%;
+  }
+
+  .promotion p{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 60px;
+    height: auto;
+    z-index: 3;
+    color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    transform: rotateZ(-42deg);
+  }
+
+  .img_block:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  .img_block:hover {
+    transition: 0.3s ease-in-out;
+    box-shadow:
+      1px 1px #e20049,
+      2px 2px #e20049,
+      3px 3px #e20049,
+      4px 4px #e20049,
+      5px 5px #e20049,
+      6px 6px #e20049,
+      7px 7px #e20049;
+    -webkit-transform: translateX(-7px);
+    transform: translateX(-7px);
+  }
+
+  .img_block:hover::before {
+    animation: overlay-animation 0.3s ease-in-out;
+    background-color: rgba(226, 0, 73, 0.1);
+  }
+
+  @keyframes overlay-animation {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 50%;
+    }
+}  
