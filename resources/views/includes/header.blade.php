@@ -118,8 +118,56 @@
                             </button>
                             <div class="form--ajax-loader">&nbsp;</div>
                     </form>
-                    <div class="main-search--results">
-                    </div>    
+                    <!-- <div class="main-search--results"> -->
+                    <ul class="search-results-list hide-search-results">
+                        <li>
+                            <a href="#" class="one-search-result">
+                                <span class="one-search-result-img-container">
+                                    <img class="one-search-result-img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                </span>
+                                <span class="one-search-result-title-price">
+                                    <span class="one-search-result-title">Мягкая игрушка Овечка Jolly Frances</span>
+                                    <span class="one-search-result-price">
+                                        <span class="one-search-result-final-amount">53.12</span>
+                                        <span class="one-search-result-final-currency"> р.</span>
+                                    </span>
+                                </span>    
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="one-search-result">
+                                <span class="one-search-result-img-container">
+                                    <img class="one-search-result-img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                </span>
+                                <span class="one-search-result-title-price">
+                                    <span class="one-search-result-title">Мягкая игрушка Овечка Jolly Frances</span>
+                                    <span class="one-search-result-price">
+                                        <span class="one-search-result-final-amount">53.12</span>
+                                        <span class="one-search-result-final-currency"> р.</span>
+                                    </span>
+                                </span>    
+                            </a>
+                        </li>
+                        <li>
+                            <div class="search-result-totals">
+                                <a href="#" class="search-result-total-record">                               
+                                    <!-- <span class="one-search-result-title-price"> -->
+                                    <span class="search-result-total-title">Показать все результаты</span>                                    
+                                    <!-- </span>     -->
+                                </a>
+                                <span class="search-result-total-count">
+                                    <span class="search-result-total-amount">3</span>
+                                    <span class="one-search-result-total-text"> найдено</span>
+                                </span>
+                            </div>    
+                        </li>
+                        <li class="search-li-not-found hide-search-results">
+                            <div class="search-result-not-found">                                   
+                                <span class="search-result-not-found-title">По вашему запросу ничего не найдено</span>                                    
+                            </div>    
+                        </li>
+                    </ul>
+                    <!-- </div>     -->
                 </div>
 
 

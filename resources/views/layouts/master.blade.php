@@ -46,6 +46,7 @@
 <script src="{{ asset('js/price-control.js') }}" type='text/javascript'></script> 
 <script src="{{ asset('js/slick.min.js') }}" type="text/javascript"></script> 
 <script src="{{ asset('js/cart-right.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/search-control.js') }}" type="text/javascript"></script>
 @yield('custom_js')
 </body>
 </html>

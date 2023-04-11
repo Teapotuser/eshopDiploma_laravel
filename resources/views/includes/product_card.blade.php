@@ -1,30 +1,41 @@
 <li class="img_block">
     <a href="" class="link-img-product">
         <div class="img-product">
-            <img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+            <img class="img" src="{{ Storage::url($product->picture) }}" alt="" />
+            <!--<img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />-->
         </div> 
         <!-- <p class="name-size-product"> -->
             <h3 class="name-product">{{ $product->title }}</h3>
-            <h3 class="size-product"><span>{{ $product->height }}</span><span> см</span></h3>
+            <h3 class="size-product"><span>{{ $product->size }}</span><span> см</span></h3>
         <!-- </p>     -->
     </a>    
     <a href="">{{ $product->collection->name }}</a>
     <div class="price-product">
-        <p class="initial-price-product">
-            <span class="initial-price-product-amount">67.08</span>
-            <span class="initial-price-product-currency"> р.</span>
-        </p>
-        <p class="final-price-product">
-            <span class="final-price-product-amount">53.12</span>
-            <span class="final-price-product-currency"> р.</span>
-        </p>
+        @if ($product->issetDiscount())
+            <p class="initial-price-product">
+                <span class="initial-price-product-amount">{{ $product->price }}</span>
+                <span class="initial-price-product-currency"> р.</span>
+            </p>
+            <p class="final-price-product">
+                <span class="final-price-product-amount">{{ $product->getPriceWithDiscount() }}</span>
+                <span class="final-price-product-currency"> р.</span>
+            </p>
+        @else
+            <p class="final-price-product">
+                <span class="final-price-product-amount blue-price">{{ $product->price }}</span>
+                <span class="final-price-product-currency blue-price"> р.</span>
+            </p>
+        @endif
     </div>
     <form name="gallery-form" method="post" action="" class="gallery-form">
-        <button type="submit" class="img_block__button add-cart" data-id="NICI1111">В корзину</button>
+        <button type="submit" class="img_block__button add-cart" data-id="{{ $product->article }}">В корзину</button>
     </form>
+
     <!--Labels Акция, Новинка -->
+    @if ($product->issetDiscount() || $product->is_new)
     <div class="promotion-wrapper">
         <!--Label Акция -->
+        @if ($product->issetDiscount())
         <div class="promotion-discount">
             <div class="svg-promotion">
                 <svg
@@ -54,7 +65,9 @@
             </div> 
             <p>Акция</p>   
         </div>
+        @endif        
         <!--Label Новинка -->
+        @if ($product->is_new)
         <div class="promotion-new">
             <div class="svg-promotion">
                 <svg
@@ -84,7 +97,9 @@
             </div> 
             <p>NEW</p>   
         </div>
+        @endif
     </div>
+	@endif
 
     <!--<div class="promotion">
         <div class="svg-promotion">

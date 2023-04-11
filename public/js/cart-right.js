@@ -21,8 +21,8 @@ closeCart.onclick = () =>{
     cartOverlay.classList.remove("transparentBcg");
     cart.classList.remove("active");
 };
-cartOverlay.onclick = () =>{
-    if(e.target.className === 'cart-right-overlay transparentBcg') {
+cartOverlay.onclick = (event) =>{
+    if(event.target.className === 'cart-right-overlay transparentBcg') {
         cartOverlay.classList.remove("transparentBcg");
         cart.classList.remove("active");
      };   

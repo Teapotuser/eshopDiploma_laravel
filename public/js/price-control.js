@@ -1,7 +1,8 @@
 const rangeInput = document.querySelectorAll(".range-input input"),
 priceInput = document.querySelectorAll(".price-input input"),
 range = document.querySelector(".slider .progress");
-let priceGap = 1000;
+// let priceGap = 1000;
+let priceGap = 10;
 
 /* priceInput.forEach(input1 =>{
     console.log('hi');
@@ -17,7 +18,7 @@ priceInput.forEach(input =>{
             if(e.target.className === "input-min"){
                 rangeInput[0].value = minPrice;
                 range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-                console.log('input-min');
+                console.log('range.style.left');
             }else{
                 rangeInput[1].value = maxPrice;
                 range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
@@ -42,6 +43,7 @@ rangeInput.forEach(input =>{
             priceInput[0].value = minVal;
             priceInput[1].value = maxVal;
             range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+            console.log('range.style.left');
             range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
         }
     });

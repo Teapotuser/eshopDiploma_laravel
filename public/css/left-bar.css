@@ -72,17 +72,25 @@
     display: none; 
 } */
 
-.list-link a:active::before, .list-link a:focus::before{
-    content: ">";
-    color: #e20049;
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
+.list-link a:active::before, .list-link a:focus::before {
+    content: '';
+    background-image: url(../images/arrow-right-bold-pink.svg);
+    position: absolute;
+    background-size: cover;
+    left: -16px;
+	top: 3px;
+    /* display: inline; */
+    height: 10px;
+    width: 11px;
+    max-height: 10px;
+    max-width: 11px;
+    margin-right: 4px;
 }
 
 .list-link a:active, .list-link a:focus {
     color: #e20049;
-    font-weight: 600;    
+    font-weight: 600;
+    position: relative;    
 }
 
 .list-link a:hover {

@@ -1,5 +1,6 @@
 .header-menu-search{
     width: 25%; /* 300px; */
+	position: relative; /*для search results выпадающего списка*/
 }
 
 .search-form {
@@ -39,8 +40,6 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 
-	
-
 	background: transparent;
 	font: 13px Tahoma, Arial, sans-serif;
 	color: #555;
@@ -75,4 +74,195 @@
     width: 20px;
     height: 22px;
     cursor: pointer;
+}
+
+/*Результаты поиска*/
+.main-search--results {
+
+}
+
+.search-results-list {
+	display: block;
+	position: absolute;
+    /* top: 100%; */
+    /* right: 0; */
+    background-color: #fff;
+    color: #484848;    
+    /* padding: 5px 15px; */
+    /* min-width: 200px; */
+    z-index: 5; /*я проставила*/
+
+    width: 430px;
+    top: 100%;
+    right: 5px;
+    padding-inline-start: 0px;
+	box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.search-results-list.hide-search-results {
+	display: none;
+}
+
+/*Треугольник*/
+.search-results-list::before {
+	content: '';
+	width: 0; 
+	height: 0; 
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid #fff;
+	/* border: 1px solid #e1e1e1; */
+	position: absolute;
+    margin: -15px -20px -20px 215px;
+  }
+
+.search-results-list li {
+    /* margin: 10px 20px 15px 20px; */
+    border-bottom: 1px solid #e1e2e1;
+    position: relative;
+	padding: 10px 10px;
+    /* padding: 10px 20px; закомментировано для burger menu на мобильном экране
+    margin-left: 5px; */
+	
+	list-style: none;
+	text-decoration: none;
+
+}
+
+.search-results-list li:last-child {
+    /* margin: 0px; */
+    /* margin: 10px 20px 10px 20px; */
+    border-bottom: none;
+    
+}
+
+.one-search-result {
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 12px;
+}
+
+.one-search-result-img-container {
+	height: 1.875rem;
+	width: 10%;
+	min-width: 10%;	
+	
+	text-align: center;
+}
+
+.one-search-result-img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    /* padding: 10px; */
+	display: inline-block;
+}
+
+.one-search-result-title-price {
+	width: 90%;
+	margin-left: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.one-search-result-title {
+	width: 80%;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 13px;
+	color: #333;
+	font-weight: 600;
+	
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.one-search-result-title:hover {	
+	color: #e20049;
+	/* transition: all 0.2s ease-in-out; */
+}
+
+.one-search-result-price {
+	white-space: nowrap;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 18px;
+	color: #50bcca;
+	font-weight: 500;
+}
+
+/*Всего найдено*/
+.search-result-totals {
+	height: 40px;
+	display: flex;
+	flex-direction: row;	
+	align-items: center;
+	justify-content: space-between;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 12px;
+}
+
+.search-result-total-record, .search-result-total-title, .search-result-total-count {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	color: #e20049;
+}
+
+.search-result-total-record {
+	margin-left: 20px;
+}
+
+.search-result-total-title::before{
+    content: '';
+    background-image: url(../images/arrow-right-pink.svg);
+    position: absolute;
+    background-size: cover;
+    left: 10px;
+	top: 23px;
+    /* display: inline; */
+    height: 12px;
+    width: 13px;
+    max-height: 12px;
+    max-width: 13px;
+    margin-right: 4px;
+}
+
+/*Ничего не найдено*/
+.search-li-not-found.hide-search-results {
+	display: none;
+}
+
+.search-result-not-found {
+	height: 40px;
+	display: flex;
+	flex-direction: row;	
+	align-items: center;
+	justify-content: center;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+}
+
+.search-result-not-found-title {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+.search-result-not-found-title:hover {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	color: #e20049;
+}
+
+@media(max-width: 767px) {
+	.search-results-list {
+		width: 97%;
+	}
 }
