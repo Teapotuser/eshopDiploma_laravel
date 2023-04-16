@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers;
+use App\Http\Controllers\CollectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
     });
+
+//Страница коллекции
+Route::get('collection/{code}', 'App\Http\Controllers\CollectionController@show')->name('collection.show');    
 
 /*Route::get('/', function () {
     return view('welcome');

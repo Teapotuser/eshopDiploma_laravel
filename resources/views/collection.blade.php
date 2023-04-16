@@ -1,6 +1,9 @@
 @extends('layouts.master')
+@section('custom_css') 
+    <link rel="stylesheet" href="{{ asset('css/collection.css') }}" type="text/css">
+@endsection
 @section('content')
-    <main>
+<main>
         <div class="wrapper">   
            
             <div class="shop-wrapper">               
@@ -15,11 +18,11 @@
                             </div>
                             <div class="list-link open">
                                 <nav>
-                                    @foreach ($categories as $category)
-                                        <li><a href="#">{{ $category->name }} </a></li> 
-                                    @endforeach
+                                @foreach ($categories as $category)
+                                 <li><a href="#">{{ $category->name }} </a></li> 
+                                @endforeach
 
-                                    <!--<li><a href="#">Мягкие игрушки</a></li>
+                                   <!--  <li><a href="#">Мягкие игрушки</a></li>
                                     <li><a href="#">Брелки</a></li>
                                     <li><a href="#">Магниты</a></li>
                                     <li><a href="#">Подушки</a></li> -->
@@ -35,10 +38,11 @@
                             </div>
                             <div class="list-link open">
                                 <nav>
-                                    @foreach ($collections as $collection_leftbar)
-                                        <li><a href="{{ route('collection.show', $collection_leftbar->code) }}">{{ $collection_leftbar->name }}</a></li> 
-                                    @endforeach
-                                    <!-- <li><a href="#">Овечки Jolly Mäh</a></li>
+                                @foreach ($collections as $collection_leftside)
+                                    <li><a href="{{ route('collection.show', $collection_leftbar->code) }}">{{ $collection_leftbar->name }}</a></li>
+                                @endforeach
+
+                                   <!--  <li><a href="#">Овечки Jolly Mäh</a></li>
                                     <li><a href="#">Единорог Theodor и его друзья</a></li>
                                     <li><a href="#">Лесные жители</a></li>
                                     <li><a href="#">Дикие обитатели</a></li>
@@ -88,7 +92,7 @@
                                         </div>
                                         <div class="price-input">
                                             <div class="field">
-                                                <span>Мин.</span>                                                
+                                                <span>Мин.</span>
                                                 <!-- <input type="number" class="input-min" value="2500"> -->
                                                 <input type="number" class="input-min" value="0">
                                             </div>
@@ -119,42 +123,100 @@
                     </div>
                 </aside>
                 <section class="right-side"> <!-- Правая галерея товаров -->
-                    <!-- Главный слайдер -->
-                   <div class="slider-carousel-wrapper">
-                        <div class="slider-carousel">
-                            <div class="slider-wrap">
-                                <a href="#">
-                                    <img class="slider-img" src="images/NICI/slider/slider1.jpg" alt="" /> 
-                                </a>
-                            </div> 
-                            <div class="slider-wrap">
-                                <a href="#">                    
-                                    <img class="slider-img" src="images/NICI/slider/slider2.jpg" alt="" />   
-                                </a>
+                    <div class="right-side-wrapper">
+                        <h1 class="right-side-title">{{ $collection->name }}</h1>
+                        <div class="right-side-description">
+                            <p><strong>{{ $collection->title_description }}</strong></p>
+                            <p>{{ $collection->description }}</p>
+                            <div class="right-side-description-img-wrapper">
+                                <img src="{{ Storage::url($collection->picture) }}" alt="category image">
                             </div>
-                            <div class="slider-wrap"> 
-                                <a href="#">                          
-                                    <img class="slider-img" src="images/NICI/slider/slider3.jpg" alt="" />
-                                </a> 
-                            </div>     
-                            <div class="slider-wrap"> 
-                                <a href="#">                          
-                                    <img class="slider-img" src="images/NICI/slider/slider4.png" alt="" />
-                                </a> 
-                            </div>                           
+
                         </div>
-                        <button class="slider-button-left"></button>
-                        <button class="slider-button-right"></button>
-                    </div>    
-                   
+
+                        <div class="dotted-line-divider"></div>
+                        <div class="top-sale-title">Хиты продаж</div>
+
+                         <!-- Слайдер популярных товаров -->
+                        <div class="slider-carousel-wrapper-collection">
+                            <div class="slider-carousel-collection">
+                                <div class="slider-wrap-collection">
+                                    <a href="#" class="slider-img-collection">
+                                        <div class="img-product-collection">
+                                            <img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                        </div>
+                                        <h3 class="name-product-collection">Мягкая игрушка Овечка Jolly Frances</h3>  
+                                        <div class="price-product-collection">
+                                            <p class="initial-price-product-collection">
+                                                67.08 р.
+                                            </p>
+                                            <p class="final-price-product-collection">
+                                                53.12 р.
+                                            </p>
+                                        </div>                                    
+                                    </a>
+                                </div> 
+                                <div class="slider-wrap-collection">
+                                    <a href="#" class="slider-img-collection">
+                                        <div class="img-product-collection">
+                                            <img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                        </div>
+                                        <h3 class="name-product-collection">Мягкая игрушка Овечка Jolly Frances</h3>  
+                                        <div class="price-product-collection">
+                                            <p class="initial-price-product-collection">
+                                                67.08 р.
+                                            </p>
+                                            <p class="final-price-product-collection">
+                                                53.12 р.
+                                            </p>
+                                        </div>                                    
+                                    </a>
+                                </div>
+                                <div class="slider-wrap-collection"> 
+                                    <a href="#" class="slider-img-collection">
+                                        <div class="img-product-collection">
+                                            <img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                        </div>
+                                        <h3 class="name-product-collection">Мягкая игрушка Овечка Jolly Frances</h3>  
+                                        <div class="price-product-collection">
+                                            <p class="initial-price-product-collection">
+                                                67.08 р.
+                                            </p>
+                                            <p class="final-price-product-collection">
+                                                53.12 р.
+                                            </p>
+                                        </div>                                    
+                                    </a>
+                                </div>      
+                                <div class="slider-wrap-collection"> 
+                                    <a href="#" class="slider-img-collection">
+                                        <div class="img-product-collection">
+                                            <img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
+                                        </div>
+                                        <h3 class="name-product-collection">Мягкая игрушка Овечка Jolly Frances</h3>  
+                                        <div class="price-product-collection">
+                                            <p class="initial-price-product-collection">
+                                                67.08 р.
+                                            </p>
+                                            <p class="final-price-product-collection">
+                                                53.12 р.
+                                            </p>
+                                        </div>                                    
+                                    </a>
+                                </div>                             
+                            </div>
+                            <button class="slider-button-left"></button>
+                            <button class="slider-button-right"></button>
+                        </div>    
+                        
+
                     <!--Здесь была Сортировка галереи товаров-->             
 
                    <!--  <ul class="shop_gallery"> здесь была Галерея товаров-->
-                   @include('includes.product_gallery')                 
-                  
+                   @include('includes.product_gallery')
+                    </div> 
                 </section> 
             </div> 
         </div>
-    </main>   
-@endsection  
-   
+    </main>
+@endsection        

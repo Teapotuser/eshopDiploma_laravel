@@ -22,3 +22,5 @@
         @include('includes.product_card', $product)        
     @endforeach
 </ul>
+<!--Пагинация галереи товаров (по 6 товаров на странице) -->
+{{ $products->withQueryString()->links('includes.pagination') }}

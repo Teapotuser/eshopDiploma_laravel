@@ -1,0 +1,538 @@
+ // Create table for storing categories
+        Schema::create('categories', function (Blueprint $table) {
+            $table->increments('id');
+			$table->string('code')->unique();
+			$table->string('name');
+			$table->text('description')->nullable();
+			$table->string('picture')->nullable();			
+			$table->softDeletes(); ???
+			$table->timestamps();
+			
+// Create table for storing products
+        Schema::create('products', function (Blueprint $table) {
+            $table->increments('id');
+			$table->string('article')->unique();
+			$table->string('title');
+			$table->text('description')->nullable();
+			$table->unsignedInteger('price')->default(value: 0); //потом делить на 100, т.к. хранится в копейках; 100 = 1р.
+			$table->foreignIdFor(model: Category::class)->constrained()->cascadeOnUpdate()->nullOnDelete();
+			$table->foreignIdFor(model: Collection::class)->constrained()->cascadeOnUpdate()->nullOnDelete();
+			$table->foreignId('category_id')->constrained()->onDelete('CASCADE'); //Дмитрий set null вместо CASCADE
+			$table->string('picture')->nullable();
+			$table->unsignedTinyInteger('discount')->default(0)->nullable();
+			$table->softDeletes();
+			$table->timestamps();	
+
+/ Create table for storing images
+        Schema::create('product_images_small', function (Blueprint $table) {
+            $table->increments('id');
+			$table->string('path'); // путь к картинке
+			$table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('CASCADE');
+			$table->foreignId('product_images_large_id')->constrained()->onUpdate('cascade')->onDelete('CASCADE');
+			$table->softDeletes();
+			$table->timestamps();
+			
+		Schema::create('product_images_large', function (Blueprint $table) {
+            $table->increments('id');
+			$table->string('path'); // путь к картинке
+			$table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('CASCADE');	
+			$table->softDeletes();
+			$table->timestamps();
+
+Отдельная таблица для images коллекций			
+			
+			
+			$table->
+			
+            $table->integer('parent_id')->unsigned()->nullable()->default(null);
+            $table->foreign('parent_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('order')->default(1);
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->timestamps();
+        });
+		
+		php artisan migrate:rollback
+		php artisan make:model Category -msfc
+		
+		в модели: 
+		class Posts extends Model{
+		use SoftDeletes;
+		}
+		
+		посмотрите роутинг, group, namespace, middleware и тл
+		
+		ЛОГИН
+		
+		php artisan storage:link
+		папка public > storage и storage > app > public
+		в public создать папки css, js
+		
+		раздел laravel "building queries"
+		
+		Для создания авторизации (2 команды):		
+		composer require laravel/ui
+		удалить resources>views > auth папку
+		php artisan ui:auth
+		нажимать yes
+		
+		app>http>controllers>auth>RegisterController (метод create -- добавить поля из миграции)
+		
+		php artisan make:migration add_column_for_data_to_users_table
+		
+		В модели User.php добавить в fillable поля миграции
+		web.php -- закомментировать middware
+		
+		http://localhost:8000/register
+		ошибка это нормально
+		
+		views>app.blade.php удалить @vite... стр. 17
+		обновить броузер (теперь нет ошибки)
+		
+		views>register.blade.php оставить только <form> остальные div удалить, удалить @endsection и @extends
+		views>login.blade.php повторить, оставив только <form>. Сверстать самой, добавить поля имя телефон
+		
+		http://localhost:8000/login
+		
+		Подписка:
+		php artisan make:model Subscription -m
+		
+		
+		СОЗДАНИЕ ГЛАВНОЙ СТРАНИЦЫ
+		
+		папка public -- создать все папки html проекта (css, js, fonts, images)
+		перенести сюда все файлы
+		
+		resources > views: создать файл index.blade.php (середина index.html)
+		resources > views > layouts: создать файл master.blade.php (header+footer)
+		
+		скопировать весь index.html в index.blade.php
+		правим в master.blade.php ссылки на css файлы: href="{{ asset('css/normalize.css') }}"
+		src="{{ asset('js/cart-right.js') }}"
+		
+		Для подключения разных css, js к разным страницам:
+		в master.blade.php после всех {{ asset('css... добавить: @yield('custom_css')
+		в master.blade.php повторить для footer js: @yield('custom_js')
+		В подключаемом шаблоне других страниц добавить: @section('custom_js') <script src="...>  </script> @endsection
+		
+		resources > views: создать папку includes
+		resources > views > includes: создать файл header.blade.php, footer.blade.php
+		скопировать <header>(html, только то что в тэге header) из master.blade.php в header.blade.php
+		удалить header(html) из master.blade.php. На его месте в master.blade.php вставить: @include('includes.header')
+		повторить с footer.blade.php
+		
+		В master.blade.php выделить <main> тэг и перенести (убрать и добавить в) в index.blade.php
+		В master.blade.php на месте <main> тэга написать: @yield('content')
+		В index.blade.php (это бывший <main>) самой первой строкой: @extends('layouts.master')
+		В index.blade.php обернуть <main>: @section('content') <main></main> @endsection
+		
+		команда:
+		php artisan make:controller Main\IndexController
+		
+		папка app > http > Controllers > Main > IndexController:
+		
+		public function index() {
+         return view('index'); 
+        }
+		
+		папка routes > web.php:
+		
+		Route::namespace('App\Http\Controllers\Main')->group(function () {
+    Route::get('/', 'IndexController@index')->name('index');
+    });
+	/* Route::get('/', function () {
+		return view('welcome');
+	}); */
+	
+	В броузере: 127.0.0.1:8000 -- должен сайт заработать
+	
+	Вывод категорий из DB в header menu:
+	В папке app вручную создать папкку ViewComposers
+	(пока отложим -- см. далее для карточки товара галереи)
+	
+	Вывод категорий из DB в left-bar в <main>:
+	папка app > http > Controllers > Main > IndexController:
+	use App\Models\Category;
+			class IndexController extends Controller
+	{
+		public function index() {
+			$categories = Category::all();
+			return view('index', compact('categories')); 
+			}
+	}
+	
+	В resources > views > index.blade.php заменить в left-bar:
+	@foreach ($categories as $category)
+		<li><a href="#">{{ $category->name }} </a></li> 
+    @endforeach
+	
+	Повторить для collections:
+		class IndexController extends Controller
+	{
+		public function index() {
+			$categories = Category::all();
+			$collections = Collection::all();
+			return view('index', compact('categories', 'collections')); 
+			}
+	}
+	
+	ПОДКЛЮЧЕНИЕ КАРТОЧЕК ТОВАРОВ В ГАЛЕРЕЕ
+	
+	Папка resources > views > includes: добавить файл product_card.blade.php
+	Из галереи скопировать сюда <li> с promotion
+	Папка resources > views > includes: добавить файл product_gallery.blade.php
+	Из галереи скопировать сюда сортировку и <ul>
+	
+	Папка app > ViewComposers: создать файл ProductComposer.php:
+		<?php
+
+	namespace App\ViewComposers;
+
+	use App\Models\Product;
+	use Illuminate\Contracts\View\View;
+
+	class ProductComposer
+	{
+		public function compose(View $view): View
+		{
+			return $view->with('products', Product::all());
+		}
+	}
+	
+	Команда:
+	php artisan make:provider ComposerServiceProvider
+	
+	Папка app > Providers > ComposerServiceProvider.php:
+	use Illuminate\Support\Facades\View;
+	use App\ViewComposers\ProductComposer;
+	public function boot()
+    {
+        View::composer('includes.product_gallery', ProductComposer::class);
+    }
+	
+	Папка config > app.php > providers раздел, самая последняя группа провайдеров, самой последней строкой:
+	App\Providers\ComposerServiceProvider::class,
+	
+	Папка resources > views > includes: добавить файл product_gallery.blade.php:
+	<ul id="imgBlock" class="layout_four_column">
+    @foreach($products as $product)   
+    <!-- $products это из ProductComposer.php-->        
+        @include('includes.product_card', $product)        
+    @endforeach
+	</ul>
+		
+	Папка resources > views > includes > product_card.blade.php: заменяем на laravel инструкции
+	Папка resources > views >index.blade.php: убрать сортировку и <ul> галереи, вставить: @include('includes.product_gallery')
+	
+	Для добавления is_new продукту:
+	создать миграцию:
+	php artisan make:migration add_column_for_is_new_to_products_table
+	$table->boolean('is_new')->default(false)->after('discount');
+	добавить 'is_new' в модель в fillable
+	
+	Для добавления полей (материал, размеры и т.д.) продукту:
+	создать миграции:
+	php artisan make:migration rename_column_height_to_products_table
+	команда для возможности изменять столбцы миграциями:
+	composer require doctrine/dbal
+	php artisan make:migration add_columns_details_to_products_table
+	$table->boolean('is_new')->default(false)->after('discount');
+	добавить 'is_new' в модель в fillable
+	
+	public function up()
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->renameColumn('height', 'size');
+            $table->unsignedInteger('height')->default(value: 0)->after('is_new');
+            $table->unsignedInteger('width')->default(value: 0)->after('height');
+            $table->unsignedInteger('depth')->default(value: 0)->after('width');            
+            $table->string('material')->nullable()->after('depth');
+            $table->string('material_filling')->nullable()->after('material');
+            $table->string('age_from')->nullable()->after('material_filling');
+			$table->string('care_recommend')->nullable()->after('age_from');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('height');
+            $table->dropColumn('width');
+            $table->dropColumn('depth');
+            $table->dropColumn('material');
+            $table->dropColumn('material_filling');
+            $table->dropColumn('age_from');
+            $table->dropColumn('care_recommend');
+            $table->renameColumn('size', 'height');
+        });
+    }
+	
+	АМИНКИ
+	
+	laravel nova (платная)
+	laravel orchid
+	
+	ЦЕНА ПРОДУКТА
+	
+	app > Models > Product.php:
+	use Illuminate\Database\Eloquent\Casts\Attribute; (отвечает за вывод поля)
+	//округление цены и расчет копеек
+    public function price(): Attribute {
+        return Attribute::make(get: fn($value) => round($value / 100, 2));
+    }
+
+    // есть ли скидка у продукта, используется во View
+    public function issetDiscount(): bool
+    {
+        return $this->discount ? true : false;
+    }
+
+    //Подсчитывает цену со скидкой, округляет + копейки
+    public function getPriceWithDiscount(): float
+    {
+        if ($this->discount == 0)
+            return $this->price;
+
+        $price = round($this->price * (100 - $this->discount) / 100, 2);
+        return $price;
+    }
+	
+	Внести discount в DB продукту
+		
+	product_card.blade.php -- изменить вывод цены товара:
+	div class="price-product">
+        @if ($product->issetDiscount())
+            <p class="initial-price-product">
+                <span class="initial-price-product-amount">{{ $product->price }}</span>
+                <span class="initial-price-product-currency"> р.</span>
+            </p>
+            <p class="final-price-product">
+                <span class="final-price-product-amount">{{ $product->getPriceWithDiscount() }}</span>
+                <span class="final-price-product-currency"> р.</span>
+            </p>
+        @else
+            <p class="final-price-product">
+                <span class="final-price-product-amount blue-price">{{ $product->price }}</span>
+                <span class="final-price-product-currency blue-price"> р.</span>
+            </p>
+        @endif
+    </div>
+	
+	Внести is_new в DB продукту
+	
+	product_card.blade.php -- изменить вывод promotion товара (см. в blog проекте)
+	
+	ИЗОБРАЖЕНИЯ ПРОДУКТОВ
+	
+	Папка (resources) storage > app > public: создать папку Products
+	поместить в папку папки с картинками продуктов
+	
+	В DB изменить поле picture у продукта:
+	Products\jolly_maeh\NICI48532\48532_01_HA_Frei_1880x2048_200x200.jpg
+	product_card.blade.php -- изменить вывод картинки товара
+	<div class="img-product">
+            <img class="img" src="{{ Storage::url($product->picture) }}" alt="" />
+            <!--<img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" /> -->
+        </div> 
+	
+	две миграции: на таблицу с иконками и на большие изображения. Начинать миграцию с product_images_large:
+	php artisan make:migration create_product_images_large_table
+	php artisan make:migration create_product_images_small_table
+	Миграция:
+	 Schema::create('product_images_small', function (Blueprint $table) {
+            $table->increments('id');
+			$table->string('path'); // путь к картинке
+			$table->foreignId('product_id')->constrained()->onUpdate('cascade')->onDelete('CASCADE');
+			$table->foreignId('product_images_large_id')->constrained()->onUpdate('cascade')->onDelete('CASCADE');
+			$table->softDeletes();
+			$table->timestamps();            
+        });
+		
+		php artisan migrate:rollback --step=1
+	добавить колонку для отобажения иконки в той же строке, что и большая картинка	
+	php artisan make:migration add_column_for_preview_to_product_images_table	
+	в миграции:
+	Schema::table('product_images', function (Blueprint $table) {
+            $table->string('preview_path')->nullable()->after('path');
+        });
+		
+	Создание модели изображений продукта (для html страницы товара):
+		коменда:
+		php artisan make:model ProductImages
+		Модель ProductImages.php:
+			class ProductImages extends Model
+			{
+				use HasFactory;
+				use SoftDeletes;
+
+				protected $fillable = [
+					'product_id', 'path', 'preview_path', 'parent_id', 'type', 'counter'
+				   ];
+				   
+				public function product()
+				{
+					return $this->belongsTo(Product::class, 'product_id', 'id');
+				}      
+			}
+		Модель Product.php:
+		public function images()
+		{
+			return $this->hasMany(ProductImage::class, 'product_id', 'id');
+		}
+			
+		
+	ВЫВОД КАТЕГОРИИ, КОЛЛЕКЦИИ
+
+	resources > views: создать новый файл collection.blade.php
+	заполнить html шаблоном
+	CollectionController.php:
+	use App\Models\Collection;
+		public function show(string $code)
+	{
+		$collection = Collection::where('code', $code)->first();
+		return view('collection', compact('collection'));
+	}
+	
+	файл web.php: добавить маршрут на коллекцию (с изменяющимся кодом):
+	use App\Http\Controllers\ProfileController;
+	use Illuminate\Support\Facades\Route;
+	// use App\Http\Controllers;
+	use App\Http\Controllers\CollectionController;
+	Route::get('collection/{code}', 'App\Http\Controllers\CollectionController@show')->name('collection.show');
+	
+	файл index.blade.php: в левой side-bar обновить ссылку коллекций:
+	@foreach ($collections as $collection)
+	 <li><a href="{{ route('collection.show', $collection->code) }}">{{ $collection->name }} </a></li> 
+	@endforeach
+	
+	CollectionController.php:
+	
+	namespace App\Http\Controllers;
+	use Illuminate\Http\Request;
+	use App\Models\Category;
+	use App\Models\Collection;
+
+	class CollectionController extends Controller
+	{
+		public function show(string $code)
+	{
+		$categories = Category::all();
+		$collections = Collection::all();
+		$collection = Collection::where('code', $code)->first();
+		return view('collection', compact('collection', 'categories', 'collections'));
+	}
+	}
+	
+	файл collection.blade.php, начало файла (css стиль):
+	@extends('layouts.master')
+	@section('custom_css') 
+		<link rel="stylesheet" href="{{ asset('css/collection.css') }}" type="text/css">
+	@endsection
+	@section('content')
+	
+	файл header.blade.php: заменить все <image scr="" > на asset:
+	<img class="search-image" src="{{ asset('images/search-icon.svg') }}" alt="Go">
+	
+	в папке изображений storage: картинки коллекций, папка с картинками категорий
+	в DB вставить путь picture в Collections, Categories таблицы
+	
+	файл collection.blade.php:
+	1) заменить в left side название переменной с $collection на $collection_leftside
+	@foreach ($collections as $collection_leftside)
+		<li><a href="{{ route('collection.show', $collection_leftbar->code) }}">{{ $collection_leftbar->name }}</a></li>
+	@endforeach
+	2) вставить директивы laravel blade для отображения из таблицы Collection:
+	{{ $collection->name }}
+	<img src="{{ Storage::url($collection->picture) }}" alt="category image">
+	
+	ИЗМЕНЕНИЕ ГАЛЕРЕИ для всех страниц
+	отказываемся от ProductComposer
+	
+	IndexController.php: добавить $products
+	use App\Models\Product;
+	public function index() {
+        $categories = Category::all();
+        $collections = Collection::all();
+        $products = Product::all();
+        return view('index', compact('categories', 'collections', 'products') ); 
+        }
+		
+	CollectionController.php:
+		use App\Models\Product;
+		в show добавить $products = $collection->products;
+		return view('collection', compact('collection', 'categories', 'collections', 'products'));
+		
+	ComposerServiceProvider.php:
+		закомментировать строку // View::composer('includes.product_gallery', ProductComposer::class);
+	
+	В галерее в карточке товара заменить ссылку на коллекцию:
+	файл product_card.blade.php:
+	<a href="{{ route('collection.show', $product->collection->code) }}">{{ $product->collection->name }}</a>
+	
+	PAGINATION галереи товаров
+	
+	Pagination в IndexController.php и других контроллерах, где выводятся товары:
+	$products = Product::paginate(6);
+	в CollectionController.php:
+	use App\Models\Product;
+	$products = Product::where('collection_id', $collection->id)->paginate(6);
+	
+	Папка views > includes: создать файл pagination.blade.php:
+		@if ($paginator->hasPages())
+			<div class="row">
+				<div class="col-xs-5">
+					<div class="pagination">
+						<ul>
+							@if ($paginator->onFirstPage())
+								<li><a href="#"><</a></li>
+							@else
+								<li><a href="{{ $paginator->previousPageUrl() }}"><</a></li>
+							@endif
+							@foreach ($elements as $element)
+								@if (is_string($element))
+									<li class="page-item disabled" aria-disabled="true"><span class="page-link">{{ $element }}</span></li>
+								@endif
+								@if (is_array($element))
+									@foreach ($element as $page => $url)
+										@if ($page == $paginator->currentPage())
+											<li><a class="active" href="#">{{ $page }}</a></li>
+										@else
+											<li><a href="{{ $url }}">{{ $page }}</a></li>
+										@endif
+									@endforeach
+								@endif
+							@endforeach
+							@if ($paginator->hasMorePages())
+								<li><a href="{{ $paginator->nextPageUrl() }}">></a></li>
+								<li><a href="{{ $paginator->url($paginator->lastPage()) }}">>|</a></li>
+							@else
+								<li><a href="#">></a></li>
+								<li><a href="#">>|</a></li>
+							@endif
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-7">
+					<div class="product-result">
+						<span>Showing
+							@if ($paginator->firstItem())
+								{{ $paginator->firstItem() }} to {{ $paginator->lastItem() }}
+							@else
+								{{ $paginator->count() }}
+							@endif
+							of {{ $paginator->total() }}
+							({{ ceil($paginator->total() / $paginator->count()) }})</span>
+					</div>
+				</div>
+			</div>
+		@endif
+		
+	Файл product_gallery.blade.php:	вставить в самом конце:
+	{{ $products->withQueryString()->links('includes.pagination') }}
+	
+	Оформить версткой пагинацию (как кнопки)

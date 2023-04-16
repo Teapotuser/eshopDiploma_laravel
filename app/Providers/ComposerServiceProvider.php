@@ -25,6 +25,6 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('includes.product_gallery', ProductComposer::class);
+        // View::composer('includes.product_gallery', ProductComposer::class);
     }
 }

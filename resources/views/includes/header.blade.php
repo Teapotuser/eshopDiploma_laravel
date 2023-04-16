@@ -7,17 +7,17 @@
         <div class="header-center"> <!-- Header: Лого -->
             <div class="header-center-wrap">
                 <div class="logo">
-                    <a href="#"><img src="images/NICI/nici_logo_butterfly2.png" alt="NICI logo"></a>
+                    <a href="#"><img src="{{ asset('images/NICI/nici_logo_butterfly2.png') }}" alt="NICI logo"></a>
                 </div>
                 <div class="animals-image">
-                    <img src="images/NICI/gEaLngtlZ_U_corrected_withText.jpg" alt="NICI animals">
+                    <img src="{{ asset('images/NICI/gEaLngtlZ_U_corrected_withText.jpg') }}" alt="NICI animals">
                 </div>
                 <div class="profile-basket">
                     <div class="profile menu__profile">
                         <!-- <div><p></p></div> -->
                         <a href=# class="prof-bask-a">
                             <div>
-                                <img src="images/user-4253.svg" alt="profile icon">
+                                <img src="{{ asset('images/user-4253.svg') }}" alt="profile icon">
                             </div>
                             <p>Мой профиль</p>                            
                         </a>
@@ -34,7 +34,7 @@
                         <!-- <div><p></p></div> -->
                         <a href=# class="prof-bask-a">
                             <div class="non-empty-cart">
-                                <img src="images/shopping-bag-3750.svg" alt="basket icon" id="cart-icon">
+                                <img src="{{ asset('images/shopping-bag-3750.svg') }}" alt="basket icon" id="cart-icon">
                                 <div class="cart-items-counter">0</div>
                             </div>                            
                             <p>Корзина</p>                            
@@ -114,7 +114,7 @@
                     <form action="/search" method="get" class="search-form">
                             <input type="search" name="sSearch" aria-label="Найти..." class="search-field" autocomplete="off" autocapitalize="off" placeholder="Найти..."/>
                             <button type="submit" name="" value="" class="search-submit">
-                                <img class="search-image" src="images/search-icon.svg" alt="Go">
+                                <img class="search-image" src="{{ asset('images/search-icon.svg') }}" alt="Go">
                             </button>
                             <div class="form--ajax-loader">&nbsp;</div>
                     </form>

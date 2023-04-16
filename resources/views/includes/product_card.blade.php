@@ -9,7 +9,7 @@
             <h3 class="size-product"><span>{{ $product->size }}</span><span> см</span></h3>
         <!-- </p>     -->
     </a>    
-    <a href="">{{ $product->collection->name }}</a>
+    <a href="{{ route('collection.show', $product->collection->code) }}">{{ $product->collection->name }}</a>
     <div class="price-product">
         @if ($product->issetDiscount())
             <p class="initial-price-product">

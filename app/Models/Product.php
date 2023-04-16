@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Category;
 use App\Models\Collection;
+use App\Models\ProductImages;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Product extends Model
@@ -46,4 +47,9 @@ class Product extends Model
         $price = round($this->price * (100 - $this->discount) / 100, 2);
         return $price;
     }
+    // Продукт имеет много images (карусель на странице товара)
+    public function images()
+	{
+		return $this->hasMany(ProductImage::class, 'product_id', 'id');
+	}
 }
