@@ -124,6 +124,7 @@ header{
     margin-left: 20px;
     min-width: 50px;
     min-height: 50px;
+    z-index: 10;
 }
 
 .header-center .logo img {

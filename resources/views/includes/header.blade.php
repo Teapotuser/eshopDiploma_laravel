@@ -7,7 +7,7 @@
         <div class="header-center"> <!-- Header: Лого -->
             <div class="header-center-wrap">
                 <div class="logo">
-                    <a href="#"><img src="{{ asset('images/NICI/nici_logo_butterfly2.png') }}" alt="NICI logo"></a>
+                    <a href="{{ route('index') }}"><img src="{{ asset('images/NICI/nici_logo_butterfly2.png') }}" alt="NICI logo"></a>
                 </div>
                 <div class="animals-image">
                     <img src="{{ asset('images/NICI/gEaLngtlZ_U_corrected_withText.jpg') }}" alt="NICI animals">

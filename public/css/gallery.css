@@ -135,6 +135,10 @@
 .name-product{
   margin-bottom: 2px;
   padding: 0 10px;
+  line-height: 1.2em;
+  height: 2.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .size-product{
@@ -164,6 +168,11 @@
   line-height: 140%;
   color: #e20049;
 }
+
+.final-price-product .blue-price {
+  color: #50bcca;
+}
+
 .gallery-form {
   width: 100%;
   text-align: center;
