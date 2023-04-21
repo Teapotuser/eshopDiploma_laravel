@@ -1,8 +1,14 @@
 .pagination-wrapper {
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
+   /*  margin-left: 10px;
+    margin-right: 10px; */
+
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    border-radius: 3px;
+    background-clip: padding-box;
+    border: 1px solid #e1e1e1;
+    background: #f5f5f8;
 }
 
 .pagination a {
@@ -78,7 +84,7 @@
     font-size: 13px;
     color:#484848;
     margin-top: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 0px;
 }
 
 
