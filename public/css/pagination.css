@@ -1,0 +1,84 @@
+.pagination-wrapper {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pagination a {
+    text-decoration: none;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold; */
+}
+
+.pagination-button-arrow, .pagination-button-page {
+/* .panel--paging .paging--link { */
+    padding: 0rem 0.625rem 0rem 0.625rem;
+    margin: 0rem 0.0625rem 0rem 0.0625rem;
+    font-size: .875rem;
+    line-height: 1.875rem;
+    border-radius: 3px;
+    background-clip: padding-box;
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #fff 0%, #fff 100%);
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    color: #484848;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pagination-button-arrow {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.pagination-button-page {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.pagination-button-arrow:hover, .pagination-button-page:hover {
+    color: #ff2068;
+    border: 1px solid #ff2068;
+}
+
+.pagination-button-arrow.disabled {
+    pointer-events: none;
+}
+
+/* .pagination-button-page {
+    border: 1px solid #ff2068;
+} */
+
+.pagination-button-page.active {   
+    padding: 0rem 0.625rem 0rem 0.625rem;
+    margin: 0rem 0.0625rem 0rem 0.0625rem;
+    font-size: .875rem;
+    border-radius: 3px;
+    background-clip: padding-box;
+    display: inline-block;
+    text-align: center;
+    
+    line-height: 2rem;
+    background-color: #ff2068;
+    background-image: linear-gradient(to bottom, #ff2068 0%, #e20049 100%);
+    color: #fff;
+    border: 0 none;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination-text-counters .product-result {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    color:#484848;
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+
+

@@ -20,6 +20,8 @@ Route::namespace('App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
     });
 
+//Страница категории
+Route::get('category/{code}', 'App\Http\Controllers\CategoryController@show')->name('category.show');
 //Страница коллекции
 Route::get('collection/{code}', 'App\Http\Controllers\CollectionController@show')->name('collection.show');    
 

@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('custom_css') 
+    <link rel="stylesheet" href="{{ asset('css/pagination.css') }}" type="text/css">
+@endsection
 @section('content')
     <main>
         <div class="wrapper">   
@@ -15,8 +18,8 @@
                             </div>
                             <div class="list-link open">
                                 <nav>
-                                    @foreach ($categories as $category)
-                                        <li><a href="#">{{ $category->name }} </a></li> 
+                                    @foreach ($categories as $category_leftbar)
+                                        <li><a href="{{ route('category.show', $category_leftbar->code) }}">{{ $category_leftbar->name }} </a></li> 
                                     @endforeach
 
                                     <!--<li><a href="#">Мягкие игрушки</a></li>

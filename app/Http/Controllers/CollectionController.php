@@ -16,7 +16,7 @@ class CollectionController extends Controller
         $collection = Collection::where('code', $code)->first();
         $products = Product::where('collection_id', $collection->id)->paginate(6);
         // dd($collection);
-        $products_bestsellers = Product::where('is_best_selling', 1)->get();
+        $products_bestsellers = Product::where('collection_id', $collection->id)->where('is_best_selling', 1)->get();
         return view('collection', compact('collection', 'categories', 'collections', 'products', 'products_bestsellers'));
     }
 }

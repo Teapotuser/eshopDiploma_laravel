@@ -18,10 +18,10 @@
                                 </div>                               
                             </div>
                             <div class="list-link open">
-                                <nav>                                
-                                    @foreach ($categories as $category_leftbar)
-                                        <li><a href="{{ route('category.show', $category_leftbar->code) }}">{{ $category_leftbar->name }} </a></li> 
-                                    @endforeach
+                                <nav>
+                                @foreach ($categories as $category_leftbar)
+                                    <li><a href="{{ route('category.show', $category_leftbar->code) }}">{{ $category_leftbar->name }} </a></li> 
+                                @endforeach
 
                                    <!--  <li><a href="#">Мягкие игрушки</a></li>
                                     <li><a href="#">Брелки</a></li>
@@ -40,7 +40,7 @@
                             <div class="list-link open">
                                 <nav>
                                 @foreach ($collections as $collection_leftbar)
-                                    <li><a href="{{ route('collection.show', $collection_leftbar->code) }}">{{ $collection_leftbar->name }}</a></li>
+                                    <li><a href="{{ route('collection.show', $collection_leftbar->code) }}">{{ $collection_leftbar->name }}</a></li> 
                                 @endforeach
 
                                    <!--  <li><a href="#">Овечки Jolly Mäh</a></li>
@@ -125,21 +125,16 @@
                 </aside>
                 <section class="right-side"> <!-- Правая галерея товаров -->
                     <div class="right-side-wrapper">
-                        <h1 class="right-side-title">{{ $collection->name }}</h1>
-                        <div class="right-side-description">
-                            <p><strong>{{ $collection->title_description }}</strong></p>
-                            <p>{{ $collection->description }}</p>
-                            <div class="right-side-description-img-wrapper">
-                                <img src="{{ Storage::url($collection->picture) }}" alt="category image">
-                            </div>
-
+                        <h1 class="right-side-title">{{ $category->name }}</h1>
+                        <div class="right-side-description">                            
+                            <p>{{ $category->description }}</p>
                         </div>
 
                         <div class="dotted-line-divider"></div>
                         <div class="top-sale-title">Хиты продаж</div>
 
                          <!-- Слайдер популярных товаров -->
-                         <div class="slider-carousel-wrapper-collection">
+                        <div class="slider-carousel-wrapper-collection">
                             <div class="slider-carousel-collection">
 
                                 @foreach ($products_bestsellers as $product_popular)
@@ -261,7 +256,7 @@
                             </div>
                             <button class="slider-button-left"></button>
                             <button class="slider-button-right"></button>
-                        </div>
+                        </div>    
                         
 
                     <!--Здесь была Сортировка галереи товаров-->             
