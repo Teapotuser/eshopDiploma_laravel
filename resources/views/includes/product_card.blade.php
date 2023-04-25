@@ -1,5 +1,5 @@
 <li class="img_block">
-    <a href="" class="link-img-product">
+    <a href="{{ route('product.show', $product->article) }}" class="link-img-product">
         <div class="img-product">
             <img class="img" src="{{ Storage::url($product->picture) }}" alt="" />
             <!--<img class="img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />-->
@@ -68,7 +68,7 @@
         @endif        
         <!--Label Новинка -->
         @if ($product->is_new)
-        <div class="promotion-new">
+        <div class="promotion-new1">
             <div class="svg-promotion">
                 <svg
                     

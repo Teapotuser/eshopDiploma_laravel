@@ -8,10 +8,8 @@ use App\Models\Product;
 
 class ProductImages extends Model
 {
-    class ProductImages extends Model
-{
     use HasFactory;
-    use SoftDeletes;
+    // use SoftDeletes;
 
     protected $fillable = [
         'product_id', 'path', 'preview_path', 'parent_id', 'type', 'counter'

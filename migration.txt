@@ -368,7 +368,7 @@
 			class ProductImages extends Model
 			{
 				use HasFactory;
-				use SoftDeletes;
+				//use SoftDeletes;
 
 				protected $fillable = [
 					'product_id', 'path', 'preview_path', 'parent_id', 'type', 'counter'
@@ -536,3 +536,96 @@
 	{{ $products->withQueryString()->links('includes.pagination') }}
 	
 	Оформить версткой пагинацию (как кнопки)
+		
+	КАРУСЕЛЬ "ХИТЫ ПРОДАЖ": оформить как цикл laravel:
+	@foreach ($collection->products as $product)
+	$products = Product::all();
+	compact('products')
+	$products = $collection->products;
+	
+	php artisan make:migration add_column_is_best_selling_to_products_table
+	
+	СТРАНИЦА ТОВАРА
+	
+	файл ProductController.php:
+	use App\Models\Product;
+	public function show(string $article)
+	{
+	   $product = Product::where('article', $article)->first();
+		return view('product.show_product', compact('product'));
+	}
+	файл web.php:
+	Route::get('product/{article}', 'App\Http\Controllers\ProductController@show')->name('product.show');
+	
+	создать папку resources > views > product, в ней файл show_product.blade.php
+	в show_product.blade.php вставить html шаблон (main часть только)
+	обернуть html в:
+		@extends('layouts.master')
+		@section('custom_css') 
+			<link rel="stylesheet" href="{{ asset('css/slick_slider_my.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css">
+			<link rel="stylesheet" href="{{ asset('css/product.css') }}" type="text/css">
+		@endsection
+		@section('content')
+		<main>...</main>
+		@endsection
+	
+	добавляем ссылку на страницу продукта в product_card.blade.php:
+	<a href="{{ route('product.show', $product->article) }}" class="link-img-product">
+	в конце файла show_product.blade.php:
+		@section('custom_js')
+		<script src="{{ asset('js/jquery.magnific-popup.min.js') }}" type="text/javascript"></script>
+		@endsection 
+		
+	Вывод картинок в карусель:
+	файл ProductController.php:
+		class ProductController extends Controller
+		{
+			public function show(string $article)
+			{
+			$product = Product::where('article', $article)->first();
+			
+			$previews = $product->images->mapToGroups(function ($item) {
+				return ['preview' => $item->preview_path];
+			});
+			$images = $product->images->mapToGroups(function ($item) {
+				return ['path' => $item->path];
+			});
+				return view('product.show_product', compact('product', 'previews', 'images'));
+			}
+		}
+
+	в show_product.blade.php:
+	<div class="product-carousel">
+		@foreach ($images->toArray()['path'] as $path)
+			<a class="link-image" href="{{ Storage::url($path) }}">                          
+				<img class="slider-img" src="{{ Storage::url($path) }}" alt="" /> 
+			</a>
+		@endforeach
+	 <div class="slider-nav">
+		<!-- конвертация коллекции (из контроллера ProductController) в массив -->
+		@foreach ($previews->toArray()['preview'] as $preview_path)
+			<div class="slider-wrap-nav"> 
+				<img class="slider-img1" src="{{ Storage::url($preview_path) }}" alt="" />
+			</div>
+		@endforeach
+		
+	модель product.php: добавить "s" на конце ProductImages
+	public function images()
+		{
+			return $this->hasMany(ProductImages::class, 'product_id', 'id');
+		}	
+	
+	В DB в product_images таблице удалить строки, где preview_path = null
+
+	AJAX
+	
+	запустить Postman
+	создать Workspace
+	создать Request (справа Requests +):
+	url: http://127.0.0.1:8000/
+	нажать Send кнопку
+	
+	
+	
+	

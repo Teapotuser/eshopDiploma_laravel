@@ -50,6 +50,6 @@ class Product extends Model
     // Продукт имеет много images (карусель на странице товара)
     public function images()
 	{
-		return $this->hasMany(ProductImage::class, 'product_id', 'id');
+		return $this->hasMany(ProductImages::class, 'product_id', 'id');
 	}
 }
