@@ -93,7 +93,7 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.product-article span:first-child, .product-price span:first-child, .product-size span:first-child, .add-to-basket-form-quantity-wrapper span:first-child {
+.product-article span:first-child, /* .product-price span:first-child */ .product-price .price-label-bold, .product-size span:first-child, .add-to-basket-form-quantity-wrapper span:first-child {
     font-weight: bold;
 }
 

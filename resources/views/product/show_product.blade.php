@@ -185,32 +185,30 @@
                                     <span> см</span>
                                 </div> -->
                                 <div class="product-price">
-                                    <span>Цена: </span>
-                                    <p class="product-initial-price">
+                                <span class="price-label-bold">Цена: </span>
+                                   <!--  <p class="product-initial-price">
                                         67.08 р.
                                     </p>
                                     <p class="product-final-price">
                                         53.12 р.
-                                    </p>
-
-                                    <div class="price-product">
+                                    </p> -->
+                                    <!-- <div class="product-price"> -->
                                         @if ($product->issetDiscount())
-                                            <p class="initial-price-product">
+                                            <p class="product-initial-price">
                                                 <span class="initial-price-product-amount">{{ $product->price }}</span>
                                                 <span class="initial-price-product-currency"> р.</span>
                                             </p>
-                                            <p class="final-price-product">
+                                            <p class="product-final-price">
                                                 <span class="final-price-product-amount">{{ $product->getPriceWithDiscount() }}</span>
                                                 <span class="final-price-product-currency"> р.</span>
                                             </p>
                                         @else
-                                            <p class="final-price-product">
+                                            <p class="product-final-price">
                                                 <span class="final-price-product-amount blue-price">{{ $product->price }}</span>
                                                 <span class="final-price-product-currency blue-price"> р.</span>
                                             </p>
                                         @endif
-                                    </div>
-
+                                    <!-- </div> -->
                                 </div>
                             </div>
                             <div class="product-darker-bg">
@@ -301,5 +299,6 @@
 </main> 
 @endsection 
 @section('custom_js')
-<script src="{{ asset('js/jquery.magnific-popup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/magnific-popup-control.js') }}" type="text/javascript"></script>
 @endsection  
