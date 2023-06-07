@@ -4,33 +4,35 @@ let searchResults = document.querySelector('.search-results-list'); // спис�
 let noResults = document.querySelector('.search-li-not-found'); // li ичего не найдено
 
 //Search Working JS
-if (document.readyState == 'loading'){
+if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
-}else{
+} else {
     ready();
-};
+}
+
 
 //Making Function
-function ready(){   
-    searchInput.addEventListener('input', showSearchResult); // вместо события keyup  
-};
+function ready() {
+    searchInput.addEventListener('input', showSearchResult); // вместо события keyup
+}
 
 
-function showSearchResult(event) {
+async function showSearchResult(event) {
+    event.preventDefault();
     var searchField = event.target;
     var inputText = searchField.value.trim();
-    if (inputText.length >= 3){
+
+
+    if (inputText.length >= 3) {
         //.value.toLowerCase();
-        if (inputText == "000"){
-            //вывод "Не найдено"
-            searchResults.classList.remove("hide-search-results");
-            noResults.classList.remove("hide-search-results");
-        }
-        else{
+        let myResponse = await fetch("/search?" + new URLSearchParams({
+            'sSearch': inputText
+        }));
+        searchResults.innerHTML = await myResponse.text();
         searchResults.classList.remove("hide-search-results");
-        }
-    }
-    else{
+
+    } else {
+        searchResults.innerHTML = '';
         searchResults.classList.add("hide-search-results");
     }
 }

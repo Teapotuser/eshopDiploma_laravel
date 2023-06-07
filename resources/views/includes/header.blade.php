@@ -111,16 +111,17 @@
                 </nav> 
                 <!-- Header: Горизонтальное меню: Поиск -->
                 <div class="header-menu-search">
-                    <form action="/search" method="get" class="search-form">
-                            <input type="search" name="sSearch" aria-label="Найти..." class="search-field" autocomplete="off" autocapitalize="off" placeholder="Найти..."/>
-                            <button type="submit" name="" value="" class="search-submit">
-                                <img class="search-image" src="{{ asset('images/search-icon.svg') }}" alt="Go">
-                            </button>
-                            <div class="form--ajax-loader">&nbsp;</div>
+                    <form action="{{ URL::to('find') }}" method="GET" class="search-form">
+                        {{csrf_field()}}
+                        <input type="search" name="sSearch" id="sSearch" aria-label="Найти..." class="search-field" autocomplete="off" autocapitalize="off" placeholder="Найти..."/>
+                        <button type="submit" name="" value="" class="search-submit">
+                            <img class="search-image" src="{{ asset('images/search-icon.svg') }}" alt="Go">
+                        </button>
+                        <div class="form--ajax-loader">&nbsp;</div>
                     </form>
                     <!-- <div class="main-search--results"> -->
-                    <ul class="search-results-list hide-search-results">
-                        <li>
+                    <ul class="search-results-list hide-search-results" id="search-results-list">
+                        <!-- <li>
                             <a href="#" class="one-search-result">
                                 <span class="one-search-result-img-container">
                                     <img class="one-search-result-img" src="images/goods/48531_01_HA_Frei.jpg" alt="" />
@@ -147,14 +148,14 @@
                                     </span>
                                 </span>    
                             </a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <div class="search-result-totals">
-                                <a href="#" class="search-result-total-record">                               
+                                <a href="#" class="search-result-total-record">  -->                              
                                     <!-- <span class="one-search-result-title-price"> -->
-                                    <span class="search-result-total-title">Показать все результаты</span>                                    
+                                    <!-- <span class="search-result-total-title">Показать все результаты</span>                                     -->
                                     <!-- </span>     -->
-                                </a>
+                               <!--  </a>
                                 <span class="search-result-total-count">
                                     <span class="search-result-total-amount">3</span>
                                     <span class="one-search-result-total-text"> найдено</span>
@@ -165,7 +166,7 @@
                             <div class="search-result-not-found">                                   
                                 <span class="search-result-not-found-title">По вашему запросу ничего не найдено</span>                                    
                             </div>    
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- </div>     -->
                 </div>

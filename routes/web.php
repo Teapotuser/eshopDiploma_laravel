@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers;
+use App\Http\Controllers;
 use App\Http\Controllers\CollectionController;
 
 /*
@@ -18,7 +18,13 @@ use App\Http\Controllers\CollectionController;
 
 Route::namespace('App\Http\Controllers\Main')->group(function () {
     Route::get('/', 'IndexController@index')->name('index');
+    Route::get('/indexFilter', 'IndexController@indexFilter')->name('indexFilter');
     });
+
+// Страница результатов поиска (нажатие кнопки Search)
+Route::get('/find', 'App\Http\Controllers\SearchController@find')->name('search.find');
+// Результаты поиска (ajax)
+Route::get('/search', 'App\Http\Controllers\SearchController@search')->name('search.search');    
 
 //Страница категории
 Route::get('category/{code}', 'App\Http\Controllers\CategoryController@show')->name('category.show');

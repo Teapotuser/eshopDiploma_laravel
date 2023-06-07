@@ -149,7 +149,7 @@
 }
 
 .one-search-result-img-container {
-	height: 1.875rem;
+	height: 2.2rem; /* 1.875rem; */
 	width: 10%;
 	min-width: 10%;	
 	

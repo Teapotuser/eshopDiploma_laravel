@@ -10,6 +10,7 @@ use App\Models\Category;
 use App\Models\Collection;
 use App\Models\ProductImages;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -37,6 +38,17 @@ class Product extends Model
     {
         return $this->discount ? true : false;
     }
+
+    /// Даниил добавил тут: для фильтра
+    public function scopeMaxPrice(Builder $query, $price)
+    {
+        return $query->whereRaw('ROUND(`products`.`price` * (100 - `products`.`discount`) / 100,2)<=' . $price*100);
+    }
+    public function scopeMinPrice(Builder $query, $price)
+    {
+        return $query->whereRaw('ROUND(`products`.`price` * (100 - `products`.`discount`) / 100,2)>=' . $price*100);
+    }
+
 
     //Подсчитывает цену со скидкой, округляет + копейки
     public function getPriceWithDiscount(): float

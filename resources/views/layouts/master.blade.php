@@ -39,11 +39,11 @@
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>     -->
 <script src="{{ asset('js/jquery.min.js') }}" type='text/javascript'></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
 <script src="{{ asset('js/menu.js') }}"></script> 
 
 <script src="{{ asset('js/control.js') }}" type="text/javascript"></script>   
-<script src="{{ asset('js/price-control.js') }}" type='text/javascript'></script> 
+<!-- <script src="{{ asset('js/price-control.js') }}" type='text/javascript'></script>  -->
 <script src="{{ asset('js/slick.min.js') }}" type="text/javascript"></script> 
 <script src="{{ asset('js/cart-right.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/search-control.js') }}" type="text/javascript"></script>
